@@ -12,5 +12,11 @@ class Event(models.Model):
     location = models.CharField(max_length=200)
     organizer = models.ForeignKey(User, on_delete=models.CASCADE)
     status = models.IntegerField(choices=STATUS, default=0)  
+    
+class Comment(models.Model):
+    event = models.ForeignKey(Event, related_name='comments', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    comment = models.TextField()
+    approved = models.BooleanField(default=False)
 
     
