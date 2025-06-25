@@ -13,10 +13,19 @@ class Event(models.Model):
     organizer = models.ForeignKey(User, on_delete=models.CASCADE)
     status = models.IntegerField(choices=STATUS, default=0)  
     
+    class Meta:
+        ordering = ('-date',)
+        
+    def __str__(self):
+        return self.title
+    
 class Comment(models.Model):
     event = models.ForeignKey(Event, related_name='comments', on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     comment = models.TextField()
     approved = models.BooleanField(default=False)
+    
+    def __str__(self):
+        return f'Comment by {self.user.username} on {self.event.title}'
 
     
