@@ -16,9 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('', include('events.urls'), name='events-urls'),
     path('summernote/', include('django_summernote.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
+    path('accounts/profile/', include('events.urls')),  # Redirect to events after login
+    path('accounts/logout/', include('events.urls')),  # Redirect to events after logout
+    path('accounts/signup/', include('events.urls')),  # Redirect to events after signup
 ]
+
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
