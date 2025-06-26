@@ -25,9 +25,6 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('accounts/profile/', include('events.urls')),  # Redirect to events after login
-    path('accounts/logout/', include('events.urls')),  # Redirect to events after logout
-    path('accounts/signup/', include('events.urls')),  # Redirect to events after signup
 ]
 
 

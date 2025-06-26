@@ -6,5 +6,5 @@ from .models import Event
 class EventList(generic.ListView):
     queryset = Event.objects.all()
     template_name = 'events/index.html'
-    paginate_by = 2  # Number of events per page    
+    paginate_by = 6  # Number of events per page    
     
