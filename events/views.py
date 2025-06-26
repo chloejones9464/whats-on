@@ -5,5 +5,6 @@ from .models import Event
 # Create your views here.
 class EventList(generic.ListView):
     queryset = Event.objects.all()
+    template_name = 'events/index.html'    
     
     
