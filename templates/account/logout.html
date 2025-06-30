@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div id="page-header" class="text-center my-5">
+        <h1 class="text-center">Logging out so soon?</h1>
+        <p class="text-center">Are you sure you want to log out?</p>
+         <form method="post" action="{% url 'account_logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Log Out</button>
+    </div>
+
+</div>
+
+{% endblock content %}
