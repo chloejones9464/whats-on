@@ -1,4 +1,41 @@
-body {
-    background-color: brown !important;
+/*Google Fonts import*/
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&family=Schoolbell&display=swap');
+:root {
+    --primary-color: #90f0a3;
+    --secondary-color: #51d9d0;
+    --highlight-color: #f9f871;    
 }
 
+
+body {
+    background-image: url('../images/bg-image.webp');
+}
+
+nav {
+    background-color: var(--secondary-color);
+    font-family: "Henny Penny", system-ui, "sans-serif";
+}
+
+#navbarText {
+    justify-content: end;  
+    font-size: 1.3rem
+}
+
+#navbar-pages a {
+    padding: 10px 20px;
+}
+
+.brand {
+    font-size: 2rem;
+}
+
+#page-header {
+    background-color: var(--primary-color);
+    border-radius : 30px;
+    padding: 10px;
+}
+
+.card {
+    border-radius: 30px;
+    background-color: var(--highlight-color);
+}

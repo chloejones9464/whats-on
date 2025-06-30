@@ -3,8 +3,8 @@
 {% block content %}
 <div class="container-fluid">
     
-    <div id="event-header" class="text-center my-5">
-        <h1 class="text-center my-4">What's on</h1>
+    <div id="page-header" class="text-center my-5">
+        <h1 class="text-center">What's on</h1>
         <p class="text-center">Explore the latest events happening around you!</p>
     </div>
 
@@ -14,8 +14,8 @@
             <div class="card h-100">
                 <div class="card-body">
                     <div class="row justify-content-center">
-                        <div class="col-11"><h5 class="card-title">{{ event.title }}</h5></div>                        
-                        <div class="col-1"><i class="fa-regular fa-heart"></i></div>
+                        <div class="col-9"><h5 class="card-title">{{ event.title }}</h5></div>                        
+                        <div id="heart-icon" class="col-1"><i class="fa-regular fa-heart"></i></div>
                     </div>                   
                     <p class="card-text">Date: {{ event.date }}</p>
                     <p class="card-text">Location: {{ event.location }}</p>
