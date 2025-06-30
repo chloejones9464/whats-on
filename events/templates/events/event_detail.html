@@ -9,32 +9,48 @@
     <p><strong>Location:</strong> {{ event.location }}</p>
     <p><strong>Description:</strong> {{ event.description | safe }}</p>
     <p><strong>Organizer:</strong> {{ event.organizer }}</p>
-
+</div>
+<hr>
+<div id="comments-section" class="container">
     <h2>Comments</h2>
-        {% for comment in comments %}
-        <div class="comment">
-            <p><strong>{{ comment.user.username }}</strong></p>
-            <p>{{ comment.content }}</p>
+ {% for comment in comments %}
+    <div class="comment">     
 
-            <p><small>Posted at: {{ comment.posted_at }}</small></p>
-            <hr>
-        {% empty %}
-            <p>No comments yet. Be the first to comment!</p>
-        </div>
-        {% endfor %}
-
-    {% if user.is_authenticated %}
-    <form method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">Post your Comment</button>
-    </form>
+        {% if user.is_authenticated and editing_comment_id == comment.id %}
+            <!-- Edit form -->
+            <form method="post">
+                {% csrf_token %}
+                <textarea name="updated_content" rows="3">{{ comment.content }}</textarea>
+                <input type="hidden" name="comment_id" value="{{ comment.id }}">
+                <button type="submit" class="btn btn-success btn-sm">Save</button>
+            </form>
         {% else %}
-            <p><a href="{% url 'account_login' %}">Log in</a> to leave a comment.</p>
+            <!-- Show comment normally -->
+            <p>{{ comment.content }}</p>
         {% endif %}
 
+        <p><small>By: {{ comment.user.username }}</small></p>
+        <p><small>Posted at: {{ comment.posted_at }}</small></p>
 
+        {% if user.is_authenticated and comment.user == user %}
+            <!-- Edit button -->
+            <form method="post" style="display:inline;">
+                {% csrf_token %}
+                <input type="hidden" name="edit_comment_id" value="{{ comment.id }}">
+                <button type="submit" class="btn btn-secondary btn-sm">Edit</button>
+            </form>
 
-</div>
+            <!-- Delete button -->
+            <form method="post" style="display:inline;">
+                {% csrf_token %}
+                <input type="hidden" name="delete_comment_id" value="{{ comment.id }}">
+                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            </form>
+        {% endif %}
+        <hr>
+    </div>
+{% empty %}
+    <p>No comments yet. Be the first to comment!</p>
+{% endfor %}
 
 {% endblock content %}

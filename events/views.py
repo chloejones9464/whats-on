@@ -49,20 +49,39 @@ def create_event(request):
 def event_detail(request, pk):
     event = get_object_or_404(Event, pk=pk)
     comments = event.comments.filter(approved=True)
+    form = CommentForm()
+    editing_comment_id = None
     
     if request.method == 'POST':
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.event = event
-            comment.user = request.user
-            comment.save()
-            return redirect('event_detail', pk=event.pk)
-    else:
-        form = CommentForm()
+        if 'delete_comment_id' in request.POST:
+            comment_id = request.POST['delete_comment_id']
+            comment = get_object_or_404(Comment, id=comment_id, user=request.user)
+            comment.delete()
+            return redirect('event_detail', pk=pk)
         
+        elif 'edit_comment_id' in request.POST:
+            editing_comment_id = int(request.POST['edit_comment_id'])
+        
+        elif 'updated_content' in request.POST:
+            comment_id = request.POST.get('comment_id')
+            updated_text = request.POST.get('updated_content')
+            comment = get_object_or_404(Comment, id=comment_id, user=request.user)
+            comment.content = updated_text
+            comment.save()
+            return redirect('event_detail', pk=pk)
+        
+        else:       
+            form = CommentForm(request.POST)
+            if form.is_valid():
+                comment = form.save(commit=False)
+                comment.event = event
+                comment.user = request.user
+                comment.save()
+                return redirect('event_detail', pk=event.pk)
+             
     return render(request, 'events/event_detail.html', {
-        'event': event,
-        'comments': comments,
-        'form': form
+       'event': event,
+       'comments': comments,
+       'form': form,
+       'editing_comment_id': editing_comment_id,
     })
