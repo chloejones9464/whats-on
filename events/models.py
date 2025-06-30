@@ -8,6 +8,7 @@ STATUS = ((0, 'Draft'), (1, 'Published'))
 class Event(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True)
+    excerpt = models.CharField(max_length=300, blank=True)
     description = models.TextField()
     date = models.DateTimeField()
     location = models.CharField(max_length=200)
@@ -29,7 +30,8 @@ class Event(models.Model):
 class Comment(models.Model):
     event = models.ForeignKey(Event, related_name='comments', on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    comment = models.TextField()
+    content = models.TextField()
+    posted_at = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
     
     def __str__(self):

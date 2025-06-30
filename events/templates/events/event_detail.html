@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="page-header" class="container">
+    <h1>{{ event.title }}</h1>
+    <hr>
+    <p><strong>Date:</strong> {{ event.date }}</p>
+    <p><strong>Location:</strong> {{ event.location }}</p>
+    <p><strong>Description:</strong> {{ event.description | safe }}</p>
+    <p><strong>Organizer:</strong> {{ event.organizer }}</p>
+
+    <h2>Comments</h2>
+        {% for comment in comments %}
+        <div class="comment">
+            <p><strong>{{ comment.user.username }}</strong></p>
+            <p>{{ comment.content }}</p>
+
+            <p><small>Posted at: {{ comment.posted_at }}</small></p>
+            <hr>
+        {% empty %}
+            <p>No comments yet. Be the first to comment!</p>
+        </div>
+        {% endfor %}
+
+    {% if user.is_authenticated %}
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Post your Comment</button>
+    </form>
+        {% else %}
+            <p><a href="{% url 'account_login' %}">Log in</a> to leave a comment.</p>
+        {% endif %}
+
+
+
+</div>
+
+{% endblock content %}

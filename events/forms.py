@@ -1,6 +1,7 @@
 from django import forms
 from .models import Event
 from django_summernote.widgets import SummernoteWidget
+from .models import Comment
 
 class EventForm(forms.ModelForm):
     class Meta:
@@ -9,4 +10,12 @@ class EventForm(forms.ModelForm):
         widgets = {
             'description': SummernoteWidget(),
             'date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+        }
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['content']
+        widgets = {
+            'comment': forms.Textarea(attrs={'rows': 3, 'placeholder': 'Leave a comment...'}),
         }

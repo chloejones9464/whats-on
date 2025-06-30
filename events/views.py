@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.views import generic
 from .models import Event
-from .forms import EventForm
+from .forms import EventForm, CommentForm
 
 # Create your views here.
 class EventList(generic.ListView):
@@ -44,3 +44,25 @@ def create_event(request):
         form = EventForm()
 
     return render(request, 'events/create_event.html', {'form': form})
+
+
+def event_detail(request, pk):
+    event = get_object_or_404(Event, pk=pk)
+    comments = event.comments.filter(approved=True)
+    
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.event = event
+            comment.user = request.user
+            comment.save()
+            return redirect('event_detail', pk=event.pk)
+    else:
+        form = CommentForm()
+        
+    return render(request, 'events/event_detail.html', {
+        'event': event,
+        'comments': comments,
+        'form': form
+    })
