@@ -23,11 +23,26 @@ def my_events(request):
     return render(request, 'events/my_events.html', {'events': events})
     
 
-
 @login_required
 def event_list(request):
     # Everyone can see this
     return render(request, 'events/event_list.html')
+
+@login_required
+def like_event(request, event_id):
+    event = get_object_or_404(Event, id=event_id)
+
+    if request.user in event.liked_by.all():
+        event.liked_by.remove(request.user)  # un-like
+    else:
+        event.liked_by.add(request.user)  # like
+
+    return redirect(request.META.get('HTTP_REFERER', 'home'))  # go back to previous page
+
+@login_required
+def my_events(request):
+    liked_events = request.user.liked_events.all()
+    return render(request, 'my_events.html', {'liked_events': liked_events})
     
 @login_required
 def create_event(request):

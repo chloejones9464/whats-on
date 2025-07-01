@@ -14,6 +14,7 @@ class Event(models.Model):
     location = models.CharField(max_length=200)
     organizer = models.ForeignKey(User, on_delete=models.CASCADE)
     status = models.IntegerField(choices=STATUS, default=0)  
+    liked_by = models.ManyToManyField(User, related_name='liked_events', blank=True)
     
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -22,7 +23,7 @@ class Event(models.Model):
     
     class Meta:
         ordering = ('-date',)
-        
+     
     def __str__(self):
         return self.title
     
