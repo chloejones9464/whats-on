@@ -10,47 +10,68 @@
     <p><strong>Description:</strong> {{ event.description | safe }}</p>
     <p><strong>Organizer:</strong> {{ event.organizer }}</p>
 </div>
+
 <hr>
+
 <div id="comments-section" class="container">
     <h2>Comments</h2>
- {% for comment in comments %}
-    <div class="comment">     
 
-        {% if user.is_authenticated and editing_comment_id == comment.id %}
-            <!-- Edit form -->
-            <form method="post">
-                {% csrf_token %}
-                <textarea name="updated_content" rows="3">{{ comment.content }}</textarea>
-                <input type="hidden" name="comment_id" value="{{ comment.id }}">
-                <button type="submit" class="btn btn-success btn-sm">Save</button>
-            </form>
-        {% else %}
-            <!-- Show comment normally -->
-            <p>{{ comment.content }}</p>
+    {% for comment in comments %}
+        {% if comment.approved or comment.user == user %}
+        <div class="comment {% if not comment.approved %}pending-comment{% endif %}">
+            <p><strong>{{ comment.user.username }}</strong></p>
+
+            {% if user.is_authenticated and editing_comment_id == comment.id %}
+                <!-- Edit form -->
+                <form method="post">
+                    {% csrf_token %}
+                    <textarea name="updated_content" rows="3">{{ comment.content }}</textarea>
+                    <input type="hidden" name="comment_id" value="{{ comment.id }}">
+                    <button type="submit" class="btn btn-success btn-sm">Save</button>
+                </form>
+            {% else %}
+                <!-- Show comment normally -->
+                <p>{{ comment.content }}</p>
+            {% endif %}
+
+            <p><small>Posted at: {{ comment.posted_at }}</small></p>
+
+            {% if not comment.approved and comment.user == user %}
+                <p><em>(Pending approval)</em></p>
+            {% endif %}
+
+            {% if user.is_authenticated and comment.user == user %}
+                <!-- Edit button -->
+                <form method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="edit_comment_id" value="{{ comment.id }}">
+                    <button type="submit" class="btn btn-secondary btn-sm">Edit</button>
+                </form>
+
+                <!-- Delete button -->
+                <form method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="delete_comment_id" value="{{ comment.id }}">
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+            {% endif %}
+
+            <hr>
+        </div>
         {% endif %}
+    {% empty %}
+        <p>No comments yet. Be the first to comment!</p>
+    {% endfor %}
 
-        <p><small>By: {{ comment.user.username }}</small></p>
-        <p><small>Posted at: {{ comment.posted_at }}</small></p>
-
-        {% if user.is_authenticated and comment.user == user %}
-            <!-- Edit button -->
-            <form method="post" style="display:inline;">
-                {% csrf_token %}
-                <input type="hidden" name="edit_comment_id" value="{{ comment.id }}">
-                <button type="submit" class="btn btn-secondary btn-sm">Edit</button>
-            </form>
-
-            <!-- Delete button -->
-            <form method="post" style="display:inline;">
-                {% csrf_token %}
-                <input type="hidden" name="delete_comment_id" value="{{ comment.id }}">
-                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-            </form>
-        {% endif %}
-        <hr>
-    </div>
-{% empty %}
-    <p>No comments yet. Be the first to comment!</p>
-{% endfor %}
+    {% if user.is_authenticated %}
+    <form method="post">
+        {% csrf_token %}
+        <textarea id="comment-box" name="content" rows="3" required></textarea> <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {% else %}
+        <p>Please <a href="{% url 'account_login' %}">log in</a> to add a comment.</p>
+    {% endif %}
+</div>
 
 {% endblock content %}

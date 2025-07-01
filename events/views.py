@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.views import generic
-from .models import Event
+from django.db.models import Q
+from .models import Event, Comment
 from .forms import EventForm, CommentForm
+
 
 # Create your views here.
 class EventList(generic.ListView):
@@ -51,6 +53,12 @@ def event_detail(request, pk):
     comments = event.comments.filter(approved=True)
     form = CommentForm()
     editing_comment_id = None
+    
+    if request.user.is_authenticated:
+        comments = event.comments.filter(Q(approved=True) | Q(user=request.user)).order_by('-posted_at')
+    else:
+        comments = event.comments.filter(approved=True).order_by('-posted_at')
+
     
     if request.method == 'POST':
         if 'delete_comment_id' in request.POST:
