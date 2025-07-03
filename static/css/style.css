@@ -6,9 +6,11 @@
     --highlight-color: #f9f871;    
 }
 
-
 body {
     background-image: url('../images/bg-image.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 nav {
@@ -41,6 +43,7 @@ nav {
 
 main {
     font-family: "Schoolbell", cursive, "sans-serif";
+    flex: 1;
 }
 
 /*Events page*/
