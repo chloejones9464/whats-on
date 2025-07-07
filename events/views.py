@@ -15,18 +15,20 @@ class EventList(generic.ListView):
     
 @login_required
 def my_events(request):
-    # Only allow pubs to access this
-    if not hasattr(request.user, 'profile') or request.user.profile.user_type != 'pub':
-        return redirect('event_list')
+    liked_events = request.user.liked_events.all()
+    created_events = Event.objects.filter(organizer=request.user)
 
-    events = Event.objects.filter(organizer=request.user).order_by('-date')
-    return render(request, 'events/my_events.html', {'events': events})
+    return render(request, 'events/my_events.html', {
+        'liked_events': liked_events,
+        'created_events': created_events,
+    })
     
 
 @login_required
 def event_list(request):
     # Everyone can see this
     return render(request, 'events/event_list.html')
+
 
 @login_required
 def like_event(request, event_id):
@@ -38,16 +40,12 @@ def like_event(request, event_id):
         event.liked_by.add(request.user)  # like
 
     return redirect(request.META.get('HTTP_REFERER', 'home'))  # go back to previous page
-
-@login_required
-def my_events(request):
-    liked_events = request.user.liked_events.all()
-    return render(request, 'my_events.html', {'liked_events': liked_events})
+   
     
 @login_required
-def create_event(request):
+def event_create(request):
     # Only allow pubs to access this
-    if not hasattr(request.user, 'profile') or request.user.profile.user_type != 'pub':
+    if not hasattr(request.user, 'profile') or request.user.profile.user_type != 'organiser':
         return redirect('event_list')  # or show a "permission denied" page
 
     if request.method == 'POST':
@@ -60,7 +58,32 @@ def create_event(request):
     else:
         form = EventForm()
 
-    return render(request, 'events/create_event.html', {'form': form})
+    return render(request, 'events/event_form.html', {'form': form})
+
+
+@login_required
+def event_edit(request, pk):
+    event = get_object_or_404(Event, pk=pk, organizer=request.user)
+
+    if request.method == 'POST':
+        form = EventForm(request.POST, instance=event)
+        if form.is_valid():
+            form.save()
+            return redirect('my_events')
+    else:
+        form = EventForm(instance=event)
+
+    return render(request, 'events/event_form.html', {'form': form})
+
+@login_required
+def event_delete(request):
+    event = get_object_or_404(Event, pk=pk, organiser=request.user)
+    
+    if request.method == 'POST':
+        event.delete()
+        return redirect('my_events')
+    
+    return redirect('my_events')
 
 
 def event_detail(request, pk):
@@ -108,3 +131,4 @@ def event_detail(request, pk):
        'form': form,
        'editing_comment_id': editing_comment_id,
     })
+    

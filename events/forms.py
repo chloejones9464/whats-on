@@ -6,7 +6,7 @@ from .models import Comment
 class EventForm(forms.ModelForm):
     class Meta:
         model = Event
-        fields = ['title', 'description', 'date', 'location']
+        fields = ['title', 'excerpt', 'description', 'date', 'location']
         widgets = {
             'description': SummernoteWidget(),
             'date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
@@ -22,3 +22,4 @@ class CommentForm(forms.ModelForm):
         widgets = {
             'comment': forms.Textarea(attrs={'rows': 3, 'placeholder': 'Leave a comment...'}),
         }
+        
