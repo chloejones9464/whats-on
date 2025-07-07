@@ -76,8 +76,8 @@ def event_edit(request, pk):
     return render(request, 'events/event_form.html', {'form': form})
 
 @login_required
-def event_delete(request):
-    event = get_object_or_404(Event, pk=pk, organiser=request.user)
+def event_delete(request, pk):
+    event = get_object_or_404(Event, pk=pk, organizer=request.user)
     
     if request.method == 'POST':
         event.delete()
