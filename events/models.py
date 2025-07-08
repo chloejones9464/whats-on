@@ -33,6 +33,8 @@ class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
     posted_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    manually_edited = models.BooleanField(default=False)
     approved = models.BooleanField(default=False)
     
     def __str__(self):

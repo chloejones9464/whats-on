@@ -113,6 +113,7 @@ def event_detail(request, pk):
             updated_text = request.POST.get('updated_content')
             comment = get_object_or_404(Comment, id=comment_id, user=request.user)
             comment.content = updated_text
+            comment.manually_edited = True
             comment.save()
             return redirect('event_detail', pk=pk)
         
