@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load event_extras %}
 
 {% block content %}
 <div class="container-fluid">
@@ -17,25 +18,39 @@
 
     <!--Filtering through events by date, time, location-->
     <div></div>
+    <form method="get" class="row mb-3">
+    <div class="col-md-4">
+        <label for="date" class="form-label">Filter by Date:</label>
+        <select name="date" id="date" class="form-select" onchange="this.form.submit()">
+            <option value="">All Dates</option>
+            {% for date in dates %}
+            <option value="{{ date }}" {% if request.GET.date == date %}selected{% endif %}>{{ date }}</option>
+            {% endfor %}
+        </select>
+    </div>
 
-    <form method="get" class="mb-4">
-        <div class="row">
-            <div class="col-md-3">
-                <input type="date" name="date" value="{{ date }}" class="form-control" placeholder="Filter by date">
-            </div>
-            <div class="col-md-3">
-                <input type="text" name="location" value="{{ location }}" class="form-control"
-                    placeholder="Filter by location">
-            </div>
-            <div class="col-md-3">
-                <input type="text" name="organizer" value="{{ organizer }}" class="form-control"
-                    placeholder="Filter by organizer">
-            </div>
-            <div class="col-md-3">
-                <button type="submit" class="btn btn-primary">Apply Filters</button>
-            </div>
-        </div>
-    </form>
+    <div class="col-md-4">
+        <label for="location" class="form-label">Filter by Location:</label>
+        <select name="location" id="location" class="form-select" onchange="this.form.submit()">
+            <option value="">All Locations</option>
+            {% for loc in locations %}
+            <option value="{{ loc }}" {% if request.GET.location == loc %}selected{% endif %}>{{ loc }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="col-lg-4">
+        <label for="organizer" class="form-label">Filter by Organizer:</label>
+        <select name="organizer" id="organizer" class="form-select" onchange="this.form.submit()">
+            <option value="">All Organizers</option>
+            {% for org in organizer %}
+            <option value="{{ org }}" {% if request.GET.organizer == org %}selected{% endif %}>{{ org }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</form>
+
+
 
     <div class="row">
         {% for event in event_list %}

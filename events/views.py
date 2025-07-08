@@ -4,6 +4,7 @@ from django.views import generic
 from django.db.models import Q
 from .models import Event, Comment
 from .forms import EventForm, CommentForm
+from django.utils import timezone
 
 
 # Create your views here.
@@ -12,6 +13,24 @@ class EventList(generic.ListView):
     template_name = 'events/index.html'
     paginate_by = 6  # Number of events per page   
     
+    def get_queryset(self):
+        queryset = Event.objects.filter(date__gte=timezone.now()).order_by('date')
+        location = self.request.GET.get('location')
+        date = self.request.GET.get('date')
+        organizer = self.request.GET.get('organizer')
+        if location:
+            queryset = queryset.filter(location__iexact=location)
+        if date:
+            queryset = queryset.filter(date=date)
+        if organizer:
+            queryset = queryset.filter(organizer__username__iexact=organizer)
+        return queryset
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Optional: Add list of locations for the dropdown
+        context['locations'] = Event.objects.values_list('location', flat=True).distinct()
+        return context
     
 @login_required
 def my_events(request):
