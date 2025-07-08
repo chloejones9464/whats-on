@@ -26,8 +26,28 @@ def my_events(request):
 
 @login_required
 def event_list(request):
+    events = Event.object.all()
+    
+    # Get filter values
+    date = request.GET.get('date')
+    location = request.GET.get('location')
+    organizer = request.GET.get('organizer')
+    
+    # Apply filters
+    if date:
+        events = events.filter(date=date)
+    if location:
+        events = events.filter(location__icontains=location)
+    if organizer:
+        events.filter(organizer__username__icontains=organizer)
+    
     # Everyone can see this
-    return render(request, 'events/event_list.html')
+    return render(request, 'events/event_list.html', {
+        'events': events,
+        'date': date,
+        'location': location,
+        'organizer': organizer,
+    })
 
 
 @login_required

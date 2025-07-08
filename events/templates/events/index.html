@@ -3,8 +3,10 @@
 {% block content %}
 <div class="container-fluid">
 
-     {% if user.is_authenticated and user.profile.user_type == 'organiser' %}
-    <div><span><a href="{% url 'my_events' %}"><p class="fs-4">Manage events</p></a></span></div>
+    {% if user.is_authenticated and user.profile.user_type == 'organiser' %}
+    <div><span><a href="{% url 'my_events' %}">
+                <p class="fs-4">Manage events</p>
+            </a></span></div>
     {% endif %}
 
     {% if user.is_authenticated %}
@@ -12,7 +14,29 @@
         <h1 class="text-center">What's on</h1>
         <p class="text-center">Explore the latest events happening around you!</p>
     </div>
-   
+
+    <!--Filtering through events by date, time, location-->
+    <div></div>
+
+    <form method="get" class="mb-4">
+        <div class="row">
+            <div class="col-md-3">
+                <input type="date" name="date" value="{{ date }}" class="form-control" placeholder="Filter by date">
+            </div>
+            <div class="col-md-3">
+                <input type="text" name="location" value="{{ location }}" class="form-control"
+                    placeholder="Filter by location">
+            </div>
+            <div class="col-md-3">
+                <input type="text" name="organizer" value="{{ organizer }}" class="form-control"
+                    placeholder="Filter by organizer">
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary">Apply Filters</button>
+            </div>
+        </div>
+    </form>
+
     <div class="row">
         {% for event in event_list %}
         <div class="col-md-4 mb-4">
