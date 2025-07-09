@@ -5,50 +5,41 @@
 <div class="container-fluid">
 
     {% if user.is_authenticated and user.profile.user_type == 'organiser' %}
-    <div><span><a href="{% url 'my_events' %}">
+    <div class="manage-event"><span><a href="{% url 'my_events' %}">
                 <p class="fs-4">Manage events</p>
             </a></span></div>
     {% endif %}
 
     {% if user.is_authenticated %}
     <div id="page-header" class="text-center my-5">
-        <h1 class="text-center">What's on</h1>
+        <h1 class="text-center display-2 fw-bold">What's on</h1>
         <p class="text-center">Explore the latest events happening around you!</p>
     </div>
 
     <!--Filtering through events by date, time, location-->
     <div></div>
-    <form method="get" class="row mb-3">
-    <div class="col-md-4">
-        <label for="date" class="form-label">Filter by Date:</label>
-        <select name="date" id="date" class="form-select" onchange="this.form.submit()">
-            <option value="">All Dates</option>
-            {% for date in dates %}
-            <option value="{{ date }}" {% if request.GET.date == date %}selected{% endif %}>{{ date }}</option>
-            {% endfor %}
-        </select>
-    </div>
+    <form method="get" class="row mb-3 background-fill">
+        <div class="col-md-4">
+            <label for="date" class="form-label">Filter by Date:</label>
+            <select name="date" id="date" class="form-select" onchange="this.form.submit()">
+                <option value="">All Dates</option>
+                {% for date in dates %}
+                <option value="{{ date }}" {% if selected_date == date %}selected{% endif %}>{{ date }}</option>
+                {% endfor %}
+            </select>
+        </div>
 
-    <div class="col-md-4">
-        <label for="location" class="form-label">Filter by Location:</label>
-        <select name="location" id="location" class="form-select" onchange="this.form.submit()">
-            <option value="">All Locations</option>
-            {% for loc in locations %}
-            <option value="{{ loc }}" {% if request.GET.location == loc %}selected{% endif %}>{{ loc }}</option>
-            {% endfor %}
-        </select>
-    </div>
+        <div class="col-md-4">
+            <label for="location" class="form-label">Filter by Location:</label>
+            <select name="location" id="location" class="form-select" onchange="this.form.submit()">
+                <option value="">All Locations</option>
+                {% for loc in locations %}
+                <option value="{{ loc }}" {% if selected_location == loc %}selected{% endif %}>{{ loc }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </form>
 
-    <div class="col-lg-4">
-        <label for="organizer" class="form-label">Filter by Organizer:</label>
-        <select name="organizer" id="organizer" class="form-select" onchange="this.form.submit()">
-            <option value="">All Organizers</option>
-            {% for org in organizer %}
-            <option value="{{ org }}" {% if request.GET.organizer == org %}selected{% endif %}>{{ org }}</option>
-            {% endfor %}
-        </select>
-    </div>
-</form>
 
 
 
@@ -58,13 +49,11 @@
             <div class="card h-100">
                 <a href="{% url 'event_detail' event.pk %}" class="text-decoration-none text-dark">
                     <div class="card-body">
-                        <div class="row justify-content-center">
-                            <div class="col-9">
-                                <h5 class="card-title">{{ event.title }}</h5>
-                            </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title mb-0">{{ event.title }}</h5>
                             <form method="post" action="{% url 'like_event' event.id %}">
                                 {% csrf_token %}
-                                <button type="submit">
+                                <button type="submit" class="like-button" data-event-id="{{ event.id }}">
                                     {% if user in event.liked_by.all %}
                                     ❤️ <!-- liked -->
                                     {% else %}
@@ -103,10 +92,20 @@
 
     {% else %}
     <div id="page-header" class="text-center my-5">
-        <h2>Welcome to What's on!</h2> <br>
-        <p>Please <a href="{% url 'account_login' %}">log in</a> to view the latest events.</p><br>
-        <p>Don't have an account? <a href="{% url 'account_signup' %}">Sign up</a> now!</p>
+        <h2 class="display-3" id="welcome-page">Welcome to What's on!</h2>
+        <hr>
+        <p>The place where fun finds YOU! <br>
+            From pub quizzes to open mic chaos, we’re your local night-out compass 🧭
+        </p>
+        <p class="text-center mt-4">
+            🍻 Ready to join the party?
+            <a href="{% url 'account_login' %}" class="fw-bold">Log in</a> <br>
+            or <br>
+            <a href="{% url 'account_signup' %}" class="fw-bold">Sign up</a>
+            and never miss a shindig again!
+        </p>
     </div>
+
     {% endif %}
 
     {% endblock content %}

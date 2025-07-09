@@ -3,11 +3,9 @@
 {% block content %}
 <div class="container-fluid">
 
-
-
     <div id="page-header" class="text-center my-5">
-        <h1 class="text-center">My Events</h1>
         {% if user.is_authenticated and user.profile.user_type == 'public' %}
+        <h1 class="text-center">My Events</h1>        
         <p class="text-center">Your saved events</p>
     </div>
 
@@ -23,7 +21,7 @@
                             </div>
                             <form method="post" action="{% url 'like_event' event.id %}">
                                 {% csrf_token %}
-                                <button type="submit">
+                                <button type="submit" class="like-button" data-event-id="{{ event.id }}">
                                     {% if user in event.liked_by.all %}
                                     ❤️ <!-- liked -->
                                     {% else %}
@@ -38,12 +36,12 @@
             </div>
         </div>
         {% empty %}
-        <p>You haven't liked any events yet!</p>
+        <p class="background-fill">You haven't liked any events yet!</p>
         {% endfor %}
     </div>
 
     {% elif user.is_authenticated and user.profile.user_type == 'organiser' %}
-    <h3 class="mt-5">Events You Created ✍️</h3>
+    <h2 class="mt-1">Events You Created ✍️</h2>
     <div class="row">
         {% for event in created_events %}
         <div class="col-md-4 mb-4">
@@ -63,6 +61,7 @@
         {% empty %}
         <p>You haven't created any events yet.</p>
         {% endfor %}
+        
     </div>
 
     {% else %}

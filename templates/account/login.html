@@ -4,7 +4,8 @@
 <div class="container-fluid">
 
   <div id="page-header" class="text-center my-5">
-    <h1 class="text-center">Login</h1>
+    <h1 class="text-center display-2">Login</h1>
+    <hr>
     <div class="row">
       <form method="post" action="/accounts/login/" class="login-form" style="max-width: 400px; margin: 0 auto;">
   {% csrf_token %}
@@ -20,7 +21,7 @@
 
   <button id="login-button" type="submit" class="btn btn-primary mt-3 w-100">Log In</button>
 </form>
-
+<hr>
       <p class="mt-2">Don't have an account? <br>
         <a id="signup-link" href="{% url 'account_signup' %}">Sign up</a>
       </p>

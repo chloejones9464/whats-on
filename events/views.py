@@ -28,7 +28,7 @@ class EventList(generic.ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # Optional: Add list of locations for the dropdown
+        # Add list of locations for the dropdown
         context['locations'] = Event.objects.values_list('location', flat=True).distinct()
         return context
     
@@ -43,30 +43,36 @@ def my_events(request):
     })
     
 
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
+from .models import Event  
+
 @login_required
 def event_list(request):
-    events = Event.object.all()
+    events = Event.objects.all()
     
-    # Get filter values
-    date = request.GET.get('date')
-    location = request.GET.get('location')
-    organizer = request.GET.get('organizer')
-    
-    # Apply filters
-    if date:
-        events = events.filter(date=date)
-    if location:
-        events = events.filter(location__icontains=location)
-    if organizer:
-        events.filter(organizer__username__icontains=organizer)
-    
-    # Everyone can see this
+    # Get filter values from GET request
+    selected_date = request.GET.get('date')
+    selected_location = request.GET.get('location')
+    selected_organizer = request.GET.get('organizer')
+
+    # Apply filters if present
+    if selected_date:
+        events = events.filter(date=selected_date)
+    if selected_location:
+        events = events.filter(location__icontains=selected_location)
+    if selected_organizer:
+        events = events.filter(
+            organizer__username__icontains=selected_organizer
+        )
+
     return render(request, 'events/event_list.html', {
         'events': events,
-        'date': date,
-        'location': location,
-        'organizer': organizer,
+        'selected_date': selected_date,
+        'selected_location': selected_location,
+        'selected_organizer': selected_organizer,
     })
+
 
 
 @login_required
@@ -85,7 +91,7 @@ def like_event(request, event_id):
 def event_create(request):
     # Only allow pubs to access this
     if not hasattr(request.user, 'profile') or request.user.profile.user_type != 'organiser':
-        return redirect('event_list')  # or show a "permission denied" page
+        return redirect('event_list')
 
     if request.method == 'POST':
         form = EventForm(request.POST)
@@ -93,7 +99,7 @@ def event_create(request):
             event = form.save(commit=False)
             event.organizer = request.user
             event.save()
-            return redirect('my_events')  # or event detail page
+            return redirect('my_events') 
     else:
         form = EventForm()
 
