@@ -1,12 +1,23 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
+from cloudinary.models import CloudinaryField
 
 STATUS = ((0, 'Draft'), (1, 'Published'))
 
 # Create your models here.
+
+
 class Event(models.Model):
     title = models.CharField(max_length=200)
+    image = CloudinaryField(
+        'image',
+        blank=True,
+        null=True,
+        default=(
+            'https://res.cloudinary.com/dcvyln5fy/image/upload/v1752856652/placeholder_image_rwbnhz.webp'
+        )
+    )
     slug = models.SlugField(unique=True)
     excerpt = models.CharField(max_length=300, blank=True)
     description = models.TextField()
@@ -19,6 +30,8 @@ class Event(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
+        if not self.image:
+            self.image = 'https://res.cloudinary.com/dcvyln5fy/image/upload/v1752856652/placeholder_image_rwbnhz.webp'
         super().save(*args, **kwargs)
     
     class Meta:

@@ -11,11 +11,22 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from env import SECRET_KEY
+from dotenv import load_dotenv
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+from cloudinary import CloudinaryImage
 import dj_database_url
-if os.path.isfile('env.py'):
-    import env
+from .env import SECRET_KEY, CLOUDINARY_URL, DEBUG, ALLOWED_HOSTS
+
+load_dotenv()  # Load environment variables from .env file
+
+# Cloudinary configuration
+cloudinary.config(cloudinary_url=CLOUDINARY_URL)
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = SECRET_KEY
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,12 +36,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = DEBUG
 
-ALLOWED_HOSTS = [
-    '.herokuapp.com',
-    '127.0.0.1',
-]
+ALLOWED_HOSTS = ALLOWED_HOSTS
 
 # Application definition
 
@@ -47,6 +55,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'events',
     'accounts.apps.AccountsConfig',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -156,3 +165,4 @@ ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_FORMS = {
     'signup': 'accounts.forms.CustomSignupForm',
 }
+

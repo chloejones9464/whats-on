@@ -3,10 +3,18 @@ from .models import Event
 from django_summernote.widgets import SummernoteWidget
 from .models import Comment
 
+
 class EventForm(forms.ModelForm):
     class Meta:
         model = Event
-        fields = ['title', 'excerpt', 'description', 'date', 'location']
+        fields = [
+            'image',
+            'title',            
+            'excerpt',
+            'description',
+            'date',
+            'location',
+        ]
         widgets = {
             'description': SummernoteWidget(),
             'date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),

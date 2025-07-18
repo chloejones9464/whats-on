@@ -7,6 +7,20 @@ import sys
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'whats_on.settings')
+    
+    try:
+        from whats_on.env import (
+            SECRET_KEY, DEBUG, CLOUDINARY_URL
+        )
+        os.environ.setdefault('SECRET_KEY', SECRET_KEY)
+        os.environ.setdefault('DEBUG', str(DEBUG))
+        os.environ.setdefault('CLOUDINARY_URL', CLOUDINARY_URL)
+    except ImportError:
+        print(
+            "Couldn't import environment variables. Ensure that the env.py file "
+            "exists and is correctly configured."
+        )
+    
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

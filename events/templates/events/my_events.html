@@ -9,10 +9,10 @@
         <p class="text-center">Your saved events</p>
     </div>
 
-    <div class="row">
+    <div class="row g-4 justify-content-center">
         {% for event in liked_events %}
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
+        <div class="col-sm-10 col-md-6 col-lg-4 d-flex justify-content-center">
+            <div class="card h-100" style="max-width: 20rem;">
                 <a href="{% url 'event_detail' event.pk %}" class="text-decoration-none text-dark">
                     <div class="card-body">
                         <div class="row justify-content-center">
@@ -46,8 +46,14 @@
         <!--Link to the Create event form-->
         <p class="create-event-link"><a href="{% url 'event_create' %}">Create event</a></p>
         {% for event in created_events %}
-        <div class="col-md-4 mb-4">
-            <div class="card">
+        <div class="col-sm-10 col-md-6 col-lg-4 d-flex justify-content-center">
+            <div class="card h-100" style="max-width: 20rem;">
+                {% if event.image %}
+                <img src="{{ event.image.url }}" class="card-img-top" alt="Event Image">
+                {% else %}
+                <img src="https://res.cloudinary.com/dcvyln5fy/image/upload/v1752856652/placeholder_image_rwbnhz.webp"
+                    class="card-img-top" alt="Default Image">
+                {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ event.title }}</h5>
                     <p class="card-text">{{ event.excerpt }}</p>

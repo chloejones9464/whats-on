@@ -6,7 +6,6 @@ from .models import Event, Comment
 from .forms import EventForm, CommentForm
 from django.utils import timezone
 
-
 # Create your views here.
 class EventList(generic.ListView):
     queryset = Event.objects.all()
@@ -94,7 +93,7 @@ def event_create(request):
         return redirect('event_list')
 
     if request.method == 'POST':
-        form = EventForm(request.POST)
+        form = EventForm(request.POST, request.FILES)
         if form.is_valid():
             event = form.save(commit=False)
             event.organizer = request.user
@@ -130,7 +129,7 @@ def event_delete(request, pk):
     
     return redirect('my_events')
 
-
+@login_required
 def event_detail(request, pk):
     event = get_object_or_404(Event, pk=pk)
     comments = event.comments.filter(approved=True)
