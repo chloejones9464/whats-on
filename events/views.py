@@ -162,7 +162,7 @@ def event_detail(request, pk):
             comment.save()
             return redirect('event_detail', pk=pk)
         
-        else:       
+        else:
             form = CommentForm(request.POST)
             if form.is_valid():
                 comment = form.save(commit=False)

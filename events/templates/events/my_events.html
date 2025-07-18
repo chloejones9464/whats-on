@@ -5,7 +5,7 @@
 
     <div id="page-header" class="text-center my-5">
         {% if user.is_authenticated and user.profile.user_type == 'public' %}
-        <h1 class="text-center">My Events</h1>        
+        <h1 class="text-center">My Events</h1>
         <p class="text-center">Your saved events</p>
     </div>
 
@@ -43,6 +43,8 @@
     {% elif user.is_authenticated and user.profile.user_type == 'organiser' %}
     <h2 class="mt-1">Events You Created ✍️</h2>
     <div class="row">
+        <!--Link to the Create event form-->
+        <p class="create-event-link"><a href="{% url 'event_create' %}">Create event</a></p>
         {% for event in created_events %}
         <div class="col-md-4 mb-4">
             <div class="card">
@@ -61,7 +63,7 @@
         {% empty %}
         <p>You haven't created any events yet.</p>
         {% endfor %}
-        
+
     </div>
 
     {% else %}

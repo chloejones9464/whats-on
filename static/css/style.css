@@ -129,6 +129,10 @@ form .btn-primary {
     color: rgb(87, 83, 83);
 }
 
+.create-event-link {
+    text-align: center;    
+}
+
 
 /*Events page*/
 

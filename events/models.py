@@ -31,7 +31,7 @@ class Event(models.Model):
 class Comment(models.Model):
     event = models.ForeignKey(Event, related_name='comments', on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    content = models.TextField()
+    content = models.CharField(max_length=200)
     posted_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     manually_edited = models.BooleanField(default=False)
