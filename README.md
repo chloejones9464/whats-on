@@ -47,9 +47,10 @@ Github,
 Python,
 Django,
 Summernote,
-AllAuth
+AllAuth,
+Cloudinary
 ## Testing
-Important part of your README!!!
+THE most important part of this project, and I still have a love/hate relationship with! <br> Here we go!!
 ### Google's Lighthouse Performance
 Screenshots of certain pages and scores (mobile and desktop)
 ### Browser Compatibility
@@ -94,7 +95,7 @@ The Favicon was not displaying and I kept getting an error display. I looked up 
 I wanted to show the user that their comment hasn't been posted but is awaiting approval by the admin. This was tricky and needed a good bit of research. I couldn't find the specific answer, maybe I wasn't asking the right question. I then resorted to asking my newly nicknamed ChatGPT friend, Codey, to help me work this issue out. I discovered that I needed to import Q from django, and I then used a filter so that only the user was able to see their pending comment and no one else. Once approved the comment is posted. This was worthy of more than a bubble bath!!
 
 #### Status for the events that we're created
-
+I wanted to the public only to see the published events and not the drafts. I added the 'status' to the EventForm in the forms.py then created an if statement for the events to show only if the status is equal to 1 ('Published'). Saved my work and refreshed the page...nothing! Had to think hard about this one as it was a Saturday and the beginning of the kids 6 weeks holiday. I found that it wasn't working because the if statement was used before the event in event_list for loop. I altered this and there it was, all the published events and the drafted events hidden.
 
 ## Deployment
 
