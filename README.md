@@ -93,6 +93,9 @@ The Favicon was not displaying and I kept getting an error display. I looked up 
 #### Pending comment
 I wanted to show the user that their comment hasn't been posted but is awaiting approval by the admin. This was tricky and needed a good bit of research. I couldn't find the specific answer, maybe I wasn't asking the right question. I then resorted to asking my newly nicknamed ChatGPT friend, Codey, to help me work this issue out. I discovered that I needed to import Q from django, and I then used a filter so that only the user was able to see their pending comment and no one else. Once approved the comment is posted. This was worthy of more than a bubble bath!!
 
+#### Status for the events that we're created
+
+
 ## Deployment
 
 #### Creating Repository on GitHub
