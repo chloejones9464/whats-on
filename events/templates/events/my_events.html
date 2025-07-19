@@ -11,14 +11,18 @@
 
     <div class="row g-4 justify-content-center">
         {% for event in liked_events %}
-        <div class="col-sm-10 col-md-6 col-lg-4 d-flex justify-content-center">
+        <div class="col-sm-10 col-md-6 col-lg-4 d-flex mb-5 justify-content-center">
             <div class="card h-100" style="max-width: 20rem;">
+                {% if event.image %}
+                <img src="{{ event.image.url }}" class="card-img-top" alt="Event Image">
+                {% else %}
+                <img src="https://res.cloudinary.com/dcvyln5fy/image/upload/v1752856652/placeholder_image_rwbnhz.webp"
+                    class="card-img-top" alt="Default Image">
+                {% endif %}
                 <a href="{% url 'event_detail' event.pk %}" class="text-decoration-none text-dark">
                     <div class="card-body">
-                        <div class="row justify-content-center">
-                            <div class="col-9">
-                                <h5 class="card-title">{{ event.title }}</h5>
-                            </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title mb-0">{{ event.title }}</h5>
                             <form method="post" action="{% url 'like_event' event.id %}">
                                 {% csrf_token %}
                                 <button type="submit" class="like-button" data-event-id="{{ event.id }}">
@@ -46,7 +50,7 @@
         <!--Link to the Create event form-->
         <p class="create-event-link"><a href="{% url 'event_create' %}">Create event</a></p>
         {% for event in created_events %}
-        <div class="col-sm-10 col-md-6 col-lg-4 d-flex justify-content-center">
+        <div class="col-sm-10 col-md-6 col-lg-4 d-flex mb-5 justify-content-center">
             <div class="card h-100" style="max-width: 20rem;">
                 {% if event.image %}
                 <img src="{{ event.image.url }}" class="card-img-top" alt="Event Image">

@@ -14,6 +14,7 @@ class EventForm(forms.ModelForm):
             'description',
             'date',
             'location',
+            'status',
         ]
         widgets = {
             'description': SummernoteWidget(),
