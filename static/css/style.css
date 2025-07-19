@@ -186,5 +186,11 @@ form .btn-primary {
     font-style: italic;
 }
 
+.event-image {
+    height: 270px;
+    object-fit: cover;
+    width: 100%;
+}
+
 
 
