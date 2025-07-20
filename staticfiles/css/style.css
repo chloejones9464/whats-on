@@ -1,0 +1,194 @@
+/*Google Fonts import*/
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&family=Schoolbell&display=swap');
+:root {
+    --primary-color: #90f0a3;
+    --secondary-color: #51d9d0;
+    --highlight-color: #f9f871; 
+}
+
+body {
+    background-image: url('../images/bg-image.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+nav {
+    background-color: var(--secondary-color);
+    font-family: "Henny Penny", system-ui, "sans-serif";
+}
+
+#navbarText {
+    justify-content: end;  
+    font-size: 1.3rem
+}
+
+#navbar-pages a {
+    padding: 10px 20px;
+}
+
+.brand {
+    font-size: 2rem;
+    text-shadow: var(--highlight-color) 2px 2px 4px;
+}
+
+#page-header {
+    background-color: var(--primary-color);
+    border-radius : 30px;
+    padding: 10px;
+    text-shadow: white 1px 1px 2px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+main {
+    font-family: "Schoolbell", cursive, "sans-serif";
+    flex: 1;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*Sign-up form*/
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+form .btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/*Main event list page*/
+
+.background-fill {
+    background-color: var(--secondary-color);
+    border-radius: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.like-button {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.like-button:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+.like-button:active {
+    transform: scale(0.9);
+}
+
+.manage-event {
+    display: inline-block;
+    background-color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 1rem;
+}
+
+.manage-event p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.manage-event a p {
+    color: rgb(0, 0, 0);
+}
+
+.manage-event a p:hover {
+    color: rgb(87, 83, 83);
+}
+
+.create-event-link {
+    text-align: center;    
+}
+
+
+/*Events page*/
+
+.card {
+    border-radius: 30px;
+    background-color: var(--highlight-color);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: var(--secondary-color) 1px 1px 2px;
+}
+
+#signup-link {
+    text-decoration: none;  
+    font-size: 1rem; 
+    font-weight: bold; 
+}
+
+#signup-form li {
+    display: none;
+}
+
+.comment {
+    background: none !important;
+}
+
+#comments-section {
+    background-color: var(--primary-color);
+    border-radius : 30px;
+    padding: 10px;
+    text-shadow: white 1px 1px 2px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    justify-items: center;
+    text-align: center;
+}
+
+#comments-section h2 {
+    font-size: 2.5rem;
+    text-shadow: var(--secondary-color) 1px 1px 2px;
+}
+
+#id_content {
+    border-radius: 20px;
+}
+
+.pending-comment {
+    opacity: 0.5;
+    font-style: italic;
+}
+
+.event-image {
+    height: 270px;
+    object-fit: cover;
+    width: 100%;
+}
+
