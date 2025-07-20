@@ -143,8 +143,8 @@ def event_detail(request, pk):
 
     
     if request.method == 'POST':
-        if 'delete_comment_id' in request.POST:
-            comment_id = request.POST['delete_comment_id']
+        if 'delete_comment' in request.POST:
+            comment_id = request.POST['delete_comment']
             comment = get_object_or_404(Comment, id=comment_id, user=request.user)
             comment.delete()
             return redirect('event_detail', pk=pk)

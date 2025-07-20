@@ -97,6 +97,8 @@ I wanted to show the user that their comment hasn't been posted but is awaiting 
 #### Status for the events that we're created
 I wanted to the public only to see the published events and not the drafts. I added the 'status' to the EventForm in the forms.py then created an if statement for the events to show only if the status is equal to 1 ('Published'). Saved my work and refreshed the page...nothing! Had to think hard about this one as it was a Saturday and the beginning of the kids 6 weeks holiday. I found that it wasn't working because the if statement was used before the event in event_list for loop. I altered this and there it was, all the published events and the drafted events hidden.
 
+####
+
 ## Deployment
 
 #### Creating Repository on GitHub
