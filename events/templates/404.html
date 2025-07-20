@@ -1,0 +1,10 @@
+{%  extends 'base.html' %}
+
+{% block content %}
+<div id="page-header" class="container text-center my-5">
+    <h1 class="display-4">404 – The Beat Dropped... <br> and So Did This Page</h1>
+    <hr>
+    <h3>We searched the lineup, checked backstage, even peeked in the green room. This page just isn’t playing tonight.</h3>
+    <a href="{% url 'home' %}" class="btn btn-primary">Head back to the Main Stage</a>
+</div>
+{% endblock content %}
