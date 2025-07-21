@@ -21,12 +21,7 @@
     <form method="get" class="row mb-3 background-fill">
         <div class="col-md-4">
             <label for="date" class="form-label">Filter by Date:</label>
-            <select name="date" id="date" class="form-select" onchange="this.form.submit()">
-                <option value="">All Dates</option>
-                {% for date in dates %}
-                <option value="{{ date }}" {% if selected_date == date %}selected{% endif %}>{{ date }}</option>
-                {% endfor %}
-            </select>
+            <input type="date" name="date" id="date" class="form-select"  value="{{ selected_date|default:'' }}" onchange="this.form.submit()"/>
         </div>
 
         <div class="col-md-4">
