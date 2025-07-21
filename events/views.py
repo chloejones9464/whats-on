@@ -70,12 +70,16 @@ def event_list(request):
         events = events.filter(
             organizer__username__icontains=selected_organizer
         )
+        
+    all_locations = Event.objects.values_list('location', flat=True).distinct()
+    unique_locations = sorted(set(loc.strip() for loc in all_locations if loc))
 
     return render(request, 'events/event_list.html', {
         'event_list': events,
         'selected_date': selected_date,
         'selected_location': selected_location,
         'selected_organizer': selected_organizer,
+        'locations': unique_locations,
     })
 
 
