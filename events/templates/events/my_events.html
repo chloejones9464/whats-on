@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container-fluid">
 
-    <div id="page-header" class="text-center my-5">
+    <div id="page-header" class="text-center my-3">
         {% if user.is_authenticated and user.profile.user_type == 'public' %}
         <h1 class="text-center">My Events</h1>
         <hr>

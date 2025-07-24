@@ -46,7 +46,6 @@ def my_events(request):
     })
 
 
-@login_required
 def event_list(request):
     events = Event.objects.all()
 

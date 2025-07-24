@@ -107,8 +107,7 @@ form .btn-primary {
 
 .manage-event {
     display: inline-block;
-    background-color: white;
-    padding: 0.4rem 0.8rem;
+    background-color: white;    
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     font-weight: bold;
@@ -116,13 +115,9 @@ form .btn-primary {
     margin: 1rem;
 }
 
-.manage-event p {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 .manage-event a p {
     color: rgb(0, 0, 0);
+    margin: 5px;
 }
 
 .manage-event a p:hover {
@@ -147,12 +142,30 @@ form .btn-primary {
     color: black;
 }
 
+#id_image {
+    display: none;
+}
+
+.custom-upload-btn {
+  background-color: var(--highlight-color);
+  color: black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+iframe {
+    border-radius: 10px;
+
+}
 
 /*Events page*/
 
 .card {
     max-width: 100%;
-    overflow: hidden;
     border-radius: 30px;
     background-color: var(--highlight-color);
     text-align: center;

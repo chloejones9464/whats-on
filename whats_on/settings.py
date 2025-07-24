@@ -14,9 +14,6 @@ from pathlib import Path
 from dotenv import load_dotenv
 import os
 import cloudinary
-import cloudinary.uploader
-import cloudinary.api
-from cloudinary import CloudinaryImage
 import dj_database_url
 from .env import SECRET_KEY, CLOUDINARY_URL, DEBUG, ALLOWED_HOSTS
 
@@ -56,6 +53,7 @@ INSTALLED_APPS = [
     'events',
     'accounts.apps.AccountsConfig',
     'cloudinary',
+    'csp',
 ]
 
 MIDDLEWARE = [
@@ -66,7 +64,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-     "allauth.account.middleware.AccountMiddleware"
+    "allauth.account.middleware.AccountMiddleware",
+    "csp.middleware.CSPMiddleware"
 ]
 
 ROOT_URLCONF = 'whats_on.urls'
@@ -156,9 +155,8 @@ LOGIN_REDIRECT_URL = '/'
 ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/' 
 
 # Optional for email login instead of username
-ACCOUNT_AUTHENTICATION_METHOD = 'username'
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_LOGIN_METHODS = {'username'}
+ACCOUNT_SIGNUP_FIELDS = ['email*', 'username*', 'password1*', 'password2*']
 
 ACCOUNT_FORMS = {
     'signup': 'accounts.forms.CustomSignupForm',
@@ -167,3 +165,14 @@ ACCOUNT_FORMS = {
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+SUMMERNOTE_CONFIG = {
+    'iframe': True,
+    'summernote': {
+        'width': '100%',
+        'height': '480px',
+    },
+    'css': (
+        '/static/css/summernote-custom.css',
+    ),
+}

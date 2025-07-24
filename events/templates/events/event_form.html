@@ -1,15 +1,59 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div id="page-header" class="text-center container mt-5">
+<div id="page-header" class="text-center container mt-3">
     <h2>{% if form.instance.pk %}Edit{% else %}Create{% endif %} Event</h2>
+    <hr>
 
     <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}                
-        {{ form.as_p }}
+        {% csrf_token %}
+
+        <p>
+            <p id="image-feedback" class="mt-2">Are you adding an image?</p>
+            <label for="id_image" class="custom-upload-btn">Choose an event image</label>            
+            {{ form.image }}            
+        </p>
+
+        <p><label for="id_title">Event title:</label>
+            {{ form.title }}
+        </p>
+        <p><label for='id_excerpt'>Give a little snippet of the event:</label>
+            {{ form.excerpt }}
+        </p>
+        <p><label for='id_description'>Event description:</label>
+            {{ form.description }}
+        </p>
+        <p><label for='id_date'>When's it happening?</label>
+            {{ form.date }}
+        </p>
+        <p><label for='id_location'>Where' i's it happening?</label>
+            {{ form.location }}
+        </p>
+        <p><label for='id_status'>Are you publishing it or drafting(for now)?</label>
+            {{ form.status}}
+        </p>
         <button type="submit" class="btn btn-primary">
             {% if form.instance.pk %}Update{% else %}Create{% endif %}
         </button>
     </form>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const fileInput = document.getElementById("id_image");
+        const feedback = document.getElementById("image-feedback");
+        const customUploadBtn = document.querySelector(".custom-upload-btn");
+
+        fileInput.addEventListener("change", function () {
+            if (fileInput.files.length > 0) {
+                feedback.textContent = "🎉 You’ve added an image!";
+                feedback.style.color = "black";
+                feedback.style.fontWeight = "bold";
+            } else {
+                feedback.textContent = "";
+            }
+        });
+    });
+</script>
+
 {% endblock %}
