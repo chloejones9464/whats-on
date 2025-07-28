@@ -1,0 +1,9 @@
+.summernote-div {
+    width: 100% !important;
+    height: 480px !important;
+}
+iframe[id^="id_description_iframe"] {
+    width: 100% !important;
+    height: 480px !important;
+    border: none !important;
+}

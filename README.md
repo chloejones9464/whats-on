@@ -37,8 +37,27 @@ Screenshoot of the colour scheme for your project
 ## Features:
 Explain your features on the website,(navigation, pages, links, forms.....)
 ### Navigation
+I've ketp the design on this website very. VERY simple. The reason for this came from a little market research(a chat with my co-workers at my current job). They had said that people tend to lose interest in events website because they are usually overloaded with useless navigation links and pages.
+This is as simple and easy to use as I could possibly make it. <br> The navigation consists of 3 buttons(not including the logo, leading back to the home screen). The 'Home' button takes the user to the events list page, with all the upcoming events in the area. The 'My Events' button takes the user to their saved events, or for the organiser (Bars) they will be redirected to the event's that they've created.
 ### Footer
+The footer is a simple sentence that tells the user the company that's created the website.
 ### Other features
+There are many different features on this website that offer a diverse experience for users.
+
+#### User Types
+The site has a sign up page allowing the user to choose the type of user they are e.g 'Public' or 'Bar/Pub'. This separates the views that each of the user types can see.
+<br>
+The public can only like/save and view the events, whereas the Bar/Pub user type can create/delete/edit their own events for the public to see.
+
+#### Commenting
+This is a feature that I really wanted to include in the site. It gives the chance for the public to express how they feel about the event and share their opinions to others. This is controlled by the Superuser, they will have the final say on whether the comment can be posted or deleted.
+
+#### The like button(heart)
+I've added this feature for the public to like and saved the events on their own personal page. They can also unlike the event and this will remove the event from their 'My Events' page.
+
+#### Filtering
+The option to filter through the events adds definition to the site, allowing the user to search for specific dates and locations(Bars/Pubs).
+
 ## Technologies Used
 HTML,
 CSS,
@@ -96,7 +115,8 @@ I wanted to show the user that their comment hasn't been posted but is awaiting 
 #### Status for the events that we're created
 I wanted to the public only to see the published events and not the drafts. I added the 'status' to the EventForm in the forms.py then created an if statement for the events to show only if the status is equal to 1 ('Published'). Saved my work and refreshed the page...nothing! Had to think hard about this one as it was a Saturday and the beginning of the kids 6 weeks holiday. I found that it wasn't working because the if statement was used before the event in event_list for loop. I altered this and there it was, all the published events and the drafted events hidden.
 
-####
+#### Summernote W3C Validator
+Minor HTML validation warnings may appear due to the django-summernote editor's rendering behavior. These are frontend-only and do not impact site performance or user experience.
 
 ## Deployment
 

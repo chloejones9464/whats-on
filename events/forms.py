@@ -20,6 +20,11 @@ class EventForm(forms.ModelForm):
             'description': SummernoteWidget(),
             'date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
         }
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Remove the broken 'hidden="true"' manually
+        self.fields['description'].widget.attrs.pop('hidden', None)
 
 class CommentForm(forms.ModelForm):
     class Meta:

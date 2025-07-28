@@ -18,28 +18,28 @@ https://github.com/chloejones9464/whats-on/issues/4
 <summary>Mobile(320px)</summary>
 
 ### Mobile (320px)
-![User profile page mobile]
+[![User profile page mobile](http://img.youtube.com/vi/1-jKdlRKk0Y/0.jpg)](https://youtube.com/shorts/1-jKdlRKk0Y)
 </details>
 
 <details> 
 <summary>Tablet</summary>
 
 ### Tablet
-![User profile page tablet]
+![User profile page tablet](assets/documentation/bar-my-events-page-tablet.webp)
 </details>
 
 <details> 
 <summary>Laptop</summary>
 
 ### Laptop
-![User profile page laptop]
+[![User profile page laptop](http://img.youtube.com/vi/LZC6_SAMchU/0.jpg)](https://youtube.com/shorts/LZC6_SAMchU)
 </details>
 
 <details> 
 <summary>1080p Screen</summary>
 
 ### 1080p screen
-![1080p Screen]
+![User profile page 1080p Screen](assets/documentation/bar-my-events-page-1080p.webp)
 </details>
 
 ### Returning User
@@ -47,7 +47,7 @@ https://github.com/chloejones9464/whats-on/issues/4
 <details>
 <summary>Returning User GitHub User Story</summary>
 <br>
-The link below will take you to the issue created for the Returning User user story.
+The link below will take you to the issue created for the Returning User user story. The screenshots below show the alert users will get if they do not have a log in. If they have a log in, the screen will take them to the event list of the site.
 <br>
 
 https://github.com/chloejones9464/whats-on/issues/3
@@ -58,28 +58,28 @@ https://github.com/chloejones9464/whats-on/issues/3
 <summary>Mobile(320px)</summary>
 
 ### Mobile (320px)
-![Returning User page mobile]
+![Returning User page mobile](assets/documentation/login-alert-mobile.webp)
 </details>
 
 <details> 
 <summary>Tablet</summary>
 
 ### Tablet
-![Returning User page tablet]
+![Returning User page tablet](assets/documentation/login-alert-tablet.webp)
 </details>
 
 <details> 
 <summary>Laptop</summary>
 
 ### Laptop
-![Returning User page laptop]
+![Returning User page laptop](assets/documentation/login-alert-laptop.webp)
 </details>
 
 <details> 
 <summary>1080p Screen</summary>
 
 ### 1080p screen
-![1080p Screen]
+![1080p Screen](assets/documentation/login-alert-1080p.webp)
 </details>
 
 ### Signing up
@@ -98,28 +98,28 @@ https://github.com/chloejones9464/whats-on/issues/2
 <summary>Mobile(320px)</summary>
 
 ### Mobile (320px)
-![Signing up page mobile]
+[![Signing up page mobile](http://img.youtube.com/vi/eZnx0YqBtII/0.jpg)](https://youtube.com/shorts/eZnx0YqBtII)
 </details>
 
 <details> 
 <summary>Tablet</summary>
 
 ### Tablet
-![Signing up page tablet]
+![Signing up page tablet](assets/documentation/signup-page-tablet.webp)
 </details>
 
 <details> 
 <summary>Laptop</summary>
 
 ### Laptop
-![Signing up page laptop]
+[![Signing up page laptop](http://img.youtube.com/vi/Y7qDogI68As/0.jpg)](https://youtu.be/Y7qDogI68As)
 </details>
 
 <details> 
 <summary>1080p Screen</summary>
 
 ### 1080p screen
-![1080p Screen]
+![1080p Screen](assets/documentation/signup-page-1080p.webp)
 </details>
 
 ## Epic 2
@@ -140,28 +140,28 @@ https://github.com/chloejones9464/whats-on/issues/5
 <summary>Mobile(320px)</summary>
 
 ### Mobile (320px)
-![Create a new event page mobile]
+[![Create a new event page mobile](http://img.youtube.com/vi/88d3-USvKK4/0.jpg)](https://youtube.com/shorts/88d3-USvKK4)
 </details>
 
 <details> 
 <summary>Tablet</summary>
 
 ### Tablet
-![Create a new event page tablet]
+[![Create a new event page tablet](http://img.youtube.com/vi/70404tjHypw/0.jpg)](https://youtube.com/shorts/70404tjHypw)
 </details>
 
 <details> 
 <summary>Laptop</summary>
 
 ### Laptop
-![Create a new event page laptop]
+[![Create a new event page laptop](http://img.youtube.com/vi/P14V8r-y5_s/0.jpg)](https://youtu.be/P14V8r-y5_s)
 </details>
 
 <details> 
 <summary>1080p Screen</summary>
 
 ### 1080p screen
-![1080p Screen]
+[![1080p Screen](http://img.youtube.com/vi/m6Vddy7-nq4/0.jpg)](https://youtu.be/m6Vddy7-nq4)
 </details>
 
 ### Editing events
@@ -180,7 +180,7 @@ https://github.com/chloejones9464/whats-on/issues/7
 <summary>Mobile(320px)</summary>
 
 ### Mobile (320px)
-![Editing events page mobile]
+[![Editing events page mobile](http://img.youtube.com/vi/gRNjkEcsG6Y/0.jpg)](https://youtube.com/shorts/gRNjkEcsG6Y)
 </details>
 
 <details> 
@@ -221,28 +221,28 @@ https://github.com/chloejones9464/whats-on/issues/8
 <summary>Mobile(320px)</summary>
 
 ### Mobile (320px)
-![Deleting events page mobile]
+![Deleting events page mobile](assets/documentation/delete-event-mobile.webp)
 </details>
 
 <details> 
 <summary>Tablet</summary>
 
 ### Tablet
-![Deleting events page tablet]
+![Deleting events page tablet](assets/documentation/delete-event-tablet.webp)
 </details>
 
 <details> 
 <summary>Laptop</summary>
 
 ### Laptop
-![Deleting events page laptop]
+![Deleting events page laptop](assets/documentation/delete-event-laptop.webp)
 </details>
 
 <details> 
 <summary>1080p Screen</summary>
 
 ### 1080p screen
-![1080p Screen]
+![1080p Screen](assets/documentation/delete-event-1080p.webp)
 </details>
 
 ## Epic 3
@@ -250,51 +250,15 @@ https://github.com/chloejones9464/whats-on/issues/8
 ### List of upcoming events
 
 <details>
-<summary>List of upcoming events GitHub User Story</summary>
+<summary>List of upcoming events and filter function GitHub User Story</summary>
 <br>
-The link below will take you to the issue created for the List of upcoming events user story.
+The link below will take you to the issue created for the List of upcoming events and filter function user story.
 <br>
 
+## List of upcoming events
 https://github.com/chloejones9464/whats-on/issues/10
 
-</details>
-
-<details> 
-<summary>Mobile(320px)</summary>
-
-### Mobile (320px)
-![List of upcoming events page mobile]
-</details>
-
-<details> 
-<summary>Tablet</summary>
-
-### Tablet
-![List of upcoming events page tablet]
-</details>
-
-<details> 
-<summary>Laptop</summary>
-
-### Laptop
-![List of upcoming events page laptop]
-</details>
-
-<details> 
-<summary>1080p Screen</summary>
-
-### 1080p screen
-![1080p Screen]
-</details>
-
-### Filtering through events
-
-<details>
-<summary>Filtering through events GitHub User Story</summary>
-<br>
-The link below will take you to the issue created for the Filtering through events user story.
-<br>
-
+## Filter function
 https://github.com/chloejones9464/whats-on/issues/11
 
 </details>
@@ -303,29 +267,30 @@ https://github.com/chloejones9464/whats-on/issues/11
 <summary>Mobile(320px)</summary>
 
 ### Mobile (320px)
-![Filtering through events page mobile]
+![List of upcoming events and filter function page mobile](assets/documentation/upcoming-events-mobile.webp)
 </details>
 
 <details> 
 <summary>Tablet</summary>
 
 ### Tablet
-![Filtering through events page tablet]
+![List of upcoming events and filter function page tablet](assets/documentation/upcoming-events-tablet.webp)
 </details>
 
 <details> 
 <summary>Laptop</summary>
 
 ### Laptop
-![Filtering through events page laptop]
+![List of upcoming events and filter function page laptop](assets/documentation/upcoming-events-laptop.webp)
 </details>
 
 <details> 
 <summary>1080p Screen</summary>
 
 ### 1080p screen
-![1080p Screen]
+![1080p Screen](assets/documentation/upcoming-events-1080p.webp)
 </details>
+
 
 ### Details of the events
 
@@ -343,28 +308,28 @@ https://github.com/chloejones9464/whats-on/issues/12
 <summary>Mobile(320px)</summary>
 
 ### Mobile (320px)
-![Details of the events page mobile]
+![Details of the events page mobile](assets/documentation/event-detail-page-mobile.webp)
 </details>
 
 <details> 
 <summary>Tablet</summary>
 
 ### Tablet
-![Details of the events page tablet]
+![Details of the events page tablet](assets/documentation/event-detail-page-tablet.webp)
 </details>
 
 <details> 
 <summary>Laptop</summary>
 
 ### Laptop
-![Details of the events page laptop]
+![Details of the events page laptop](assets/documentation/event-detail-page-laptop.webp)
 </details>
 
 <details> 
 <summary>1080p Screen</summary>
 
 ### 1080p screen
-![1080p Screen]
+![1080p Screen](assets/documentation/event-detail-page-1080p.webp)
 </details>
 
 ### Past events filter
@@ -379,45 +344,28 @@ https://github.com/chloejones9464/whats-on/issues/13
 
 </details>
 
-<details> 
-<summary>Mobile(320px)</summary>
-
-### Mobile (320px)
-![Past events filter page mobile]
-</details>
-
-<details> 
-<summary>Tablet</summary>
-
-### Tablet
-![Past events filter page tablet]
-</details>
-
-<details> 
-<summary>Laptop</summary>
-
-### Laptop
-![Past events filter page laptop]
-</details>
-
-<details> 
-<summary>1080p Screen</summary>
-
-### 1080p screen
-![1080p Screen]
-</details>
 
 ## Epic 4
 
 ### Commenting on events
 
 <details>
-<summary>Commenting on events GitHub User Story</summary>
+<summary>Commenting on events and Timestamps visible on comments GitHub User Story</summary>
 <br>
-The link below will take you to the issue created for the Commenting on events user story.
+The link below will take you to the issue created for the Commenting on events Timestamps visible on comments user stories.
+
+The mobile section of this user story also displays the edit and delete function of the comments.
 <br>
 
+#### Edit and delete GitHub US
+https://github.com/chloejones9464/whats-on/issues/15
+<br>
+
+#### Commenting on events GitHub US
 https://github.com/chloejones9464/whats-on/issues/14
+
+#### Timestamps visible on comments GitHub US
+https://github.com/chloejones9464/whats-on/issues/17
 
 </details>
 
@@ -432,62 +380,21 @@ https://github.com/chloejones9464/whats-on/issues/14
 <summary>Tablet</summary>
 
 ### Tablet
-![Commenting on events page tablet]
+![Commenting on events page tablet](assets/documentation/comment-section-tablet.webp)
 </details>
 
 <details> 
 <summary>Laptop</summary>
 
 ### Laptop
-![Commenting on events page laptop]
+![Commenting on events page laptop](assets/documentation/comment-section-laptop.webp)
 </details>
 
 <details> 
 <summary>1080p Screen</summary>
 
 ### 1080p screen
-![1080p Screen]
-</details>
-
-
-### Edit/delete comments
-
-<details>
-<summary>Edit/delete comments GitHub User Story</summary>
-<br>
-The link below will take you to the issue created for the Edit/delete comments user story.
-<br>
-
-https://github.com/chloejones9464/whats-on/issues/15
-
-</details>
-
-<details> 
-<summary>Mobile(320px)</summary>
-
-### Mobile (320px)
-![Edit/delete comments page mobile]
-</details>
-
-<details> 
-<summary>Tablet</summary>
-
-### Tablet
-![Edit/delete comments page tablet]
-</details>
-
-<details> 
-<summary>Laptop</summary>
-
-### Laptop
-![Edit/delete comments page laptop]
-</details>
-
-<details> 
-<summary>1080p Screen</summary>
-
-### 1080p screen
-![1080p Screen]
+![1080p Screen](assets/documentation/comment-section-1080p.webp)
 </details>
 
 ### Superuser control in case of inappropriate comments
@@ -500,75 +407,11 @@ The link below will take you to the issue created for the Superuser control in c
 
 https://github.com/chloejones9464/whats-on/issues/16
 
+![Superuser control](assets/documentation/superuser-control-comments.webp)
 </details>
 
-<details> 
-<summary>Mobile(320px)</summary>
 
-### Mobile (320px)
-![Superuser control in case of inappropriate comments page mobile]
-</details>
 
-<details> 
-<summary>Tablet</summary>
-
-### Tablet
-![Superuser control in case of inappropriate comments page tablet]
-</details>
-
-<details> 
-<summary>Laptop</summary>
-
-### Laptop
-![Superuser control in case of inappropriate comments page laptop]
-</details>
-
-<details> 
-<summary>1080p Screen</summary>
-
-### 1080p screen
-![1080p Screen]
-</details>
-
-### Comment timestamps are visable
-
-<details>
-<summary>Comment timestamps are visable GitHub User Story</summary>
-<br>
-The link below will take you to the issue created for the Comment timestamps are visable user story.
-<br>
-
-https://github.com/chloejones9464/whats-on/issues/17
-
-</details>
-
-<details> 
-<summary>Mobile(320px)</summary>
-
-### Mobile (320px)
-![Comment timestamps are visable page mobile]
-</details>
-
-<details> 
-<summary>Tablet</summary>
-
-### Tablet
-![Comment timestamps are visable page tablet]
-</details>
-
-<details> 
-<summary>Laptop</summary>
-
-### Laptop
-![Comment timestamps are visable page laptop]
-</details>
-
-<details> 
-<summary>1080p Screen</summary>
-
-### 1080p screen
-![1080p Screen]
-</details>
 
 [Home (User Stories)](README.md#user-stories) <br>
 [Home (Responsiveness)](README.md#responsiveness)

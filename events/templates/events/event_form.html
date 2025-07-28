@@ -1,32 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div id="page-header" class="text-center container mt-3">
-    <h2>{% if form.instance.pk %}Edit{% else %}Create{% endif %} Event</h2>
+<div id="page-header" class="text-center container mt-3 mb-3 create-form-area">
+    <h2 class="display-3">{% if form.instance.pk %}Edit{% else %}Create{% endif %} Event</h2>
     <hr>
 
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-
-        <p>
-            <p id="image-feedback" class="mt-2">Are you adding an image?</p>
-            <label for="id_image" class="custom-upload-btn">Choose an event image</label>            
-            {{ form.image }}            
-        </p>
-
+        <p class="current-image-label">Event Image Currently:</p>
+        <img src="{{ form.instance.image.url }}" alt="Current Image" class="current-image-preview">
+        <br>
+        <p id="image-feedback" class="mt-2">Are you adding an image?</p>
+        <label for="id_image" class="custom-upload-btn">Choose an event image</label>
         <p><label for="id_title">Event title:</label>
             {{ form.title }}
         </p>
         <p><label for='id_excerpt'>Give a little snippet of the event:</label>
             {{ form.excerpt }}
         </p>
-        <p><label for='id_description'>Event description:</label>
+        <p><label for='id_description'>Event description:</label></p>
+        <div class="mb-3">
             {{ form.description }}
-        </p>
+        </div>
+
         <p><label for='id_date'>When's it happening?</label>
             {{ form.date }}
         </p>
-        <p><label for='id_location'>Where' i's it happening?</label>
+        <p><label for='id_location'>Where' is it happening?</label>
             {{ form.location }}
         </p>
         <p><label for='id_status'>Are you publishing it or drafting(for now)?</label>

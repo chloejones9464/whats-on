@@ -168,10 +168,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 SUMMERNOTE_CONFIG = {
     'iframe': True,
-    'summernote': {
-        'width': '100%',
-        'height': '480px',
-    },
+    'width': '100%',
+    'height': '480px',
     'css': (
         '/static/css/summernote-custom.css',
     ),

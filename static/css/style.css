@@ -50,6 +50,21 @@ a {
     text-decoration: none;
 }
 
+/* Logout page */
+.logout-container,
+.login-container,
+.signup-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 2rem;
+}
+
+.login-container #page-header {
+    width: 350px;
+}
+
 /*Sign-up form*/
 
 form label {
@@ -115,7 +130,7 @@ form .btn-primary {
     margin: 1rem;
 }
 
-.manage-event a p {
+.manage-event a {
     color: rgb(0, 0, 0);
     margin: 5px;
 }
@@ -230,25 +245,30 @@ iframe {
     border-radius: 30px 30px 0 0;
 }
 
-#viewButton {
+.viewButton {
     background-color: var(--secondary-color);
     color: black;
 }
 
-#viewButton:hover{
+.viewButton:hover{
     background-color: #3fa19b;
     color: white;
 }
 
-#editButton {
+.editButton {
     background-color: var(--primary-color);
     color: black;
 }
 
-#editButton:hover {
+.editButton:hover {
     background-color: #60a06d;
     color: white;
 }
+
+iframe {
+    border: none !important;
+}
+
 
 /* Media queries */
 
@@ -256,4 +276,70 @@ iframe {
     .event-detail-image {
         height: 200px;
     }
+}
+
+@media (min-width: 1920px) {
+    body {
+        font-size: 1.7rem;
+    }
+    nav {
+        font-size: 1.5rem;
+    }
+
+    #homeNavButton {
+        margin-right: 15px
+    }
+
+    #navbarText a {
+        font-size: 1.3em;
+    }
+
+    #welcome-username {
+        font-size: 1.8em;
+    }
+
+    .brand {
+        font-size: 3rem;
+    }
+    
+    #page-header {
+        font-size: 1.5rem;
+    }
+
+    .login-container #page-header {
+        width: 500px;
+    }
+
+    .welcome, .login-page {
+        font-size: 2.5rem;
+    }
+
+    #signup-link {
+        font-size: 1.9rem;
+    }
+
+    .signup-form-area, .create-form-area {
+        font-size: 2.5rem !important;
+    }
+
+    button[type="submit"],
+    .noButton,
+    .modal,
+    .modal-title {
+        font-size: 2rem;
+    }
+
+    .login-form input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+        font-size: 2rem !important;
+    }
+
+
 }

@@ -2,7 +2,9 @@
 
 {% block content %}
 
-<div class="container-fluid">
+<div class="container-fluid logout-container">
+
+    {% if user.is_authenticated %}
 
     <div id="page-header" class="text-center my-3">
         <h1 class="text-center">Logging out so soon?</h1>
@@ -10,7 +12,9 @@
          <form method="post" action="{% url 'account_logout' %}">
             {% csrf_token %}
             <button type="submit" class="btn btn-danger">Log Out</button>
+         </form>
     </div>
+    {% endif %}    
 
 </div>
 
