@@ -30,12 +30,28 @@ This page contains links to my user stories in my GitHub project and will have c
 ### Wireframes
 [Click here](wireframes.md) to view all the wireframes for this project.
 ### Typography
-Explain font you've used for your project
+For this project I chose the fonts Schoolbell and Henny Penny. I found these fonts really fun and eye catching. They give the project a relaxed and fun look.
 ### Colour Scheme
-Screenshoot of the colour scheme for your project
+I used the page's Eye Dropper extention to find a color that I could bounce off.
+
+<details>
+<summary>Eye Dropper screenshot</summary>
+
+![Eye Dropper screenshot](assets/documentation/webpage-eyedropper.webp)
+</details>
+
+<br>
+
+Then from that selection I used Colorspace to create a palette for my site.
+
+<details>
+<summary>Colorspace</summary>
+
+![Colorspace](assets/documentation/colorspace.webp)
+</details>
 
 ## Features:
-Explain your features on the website,(navigation, pages, links, forms.....)
+
 ### Navigation
 I've ketp the design on this website very. VERY simple. The reason for this came from a little market research(a chat with my co-workers at my current job). They had said that people tend to lose interest in events website because they are usually overloaded with useless navigation links and pages.
 This is as simple and easy to use as I could possibly make it. <br> The navigation consists of 3 buttons(not including the logo, leading back to the home screen). The 'Home' button takes the user to the events list page, with all the upcoming events in the area. The 'My Events' button takes the user to their saved events, or for the organiser (Bars) they will be redirected to the event's that they've created.
@@ -71,13 +87,116 @@ Cloudinary
 ## Testing
 THE most important part of this project, and I still have a love/hate relationship with! <br> Here we go!!
 ### Google's Lighthouse Performance
-Screenshots of certain pages and scores (mobile and desktop)
+
+<details>
+<summary>Mobile</summary>
+
+![Mobile Lighthouse Performance]()
+</details>
+
+<details>
+<summary>Desktop</summary>
+
+![Desktop Lighthouse Performance]()
+</details>
+
 ### Browser Compatibility
-Check compatability with different browsers
+
+<details>
+<summary>Chrome</summary>
+
+![Chrome]()
+</details>
+
+<details>
+<summary>Internet Explorer</summary>
+
+![Internet Explorer]()
+</details>
+
+<details>
+<summary>Safari</summary>
+
+![Safari]()
+</details>
+
+<details>
+<summary>Firefox</summary>
+
+![Firefox]()
+</details>
+
+<details>
+<summary>Opera</summary>
+
+![Opera]()
+</details>
+
 ### Responsiveness
-Screenshots of the responsivness, pick few devices (from 320px top 1200px)
+I've displayed the responsiveness of this site in my [user stories](userstories.md), head over to see them!
 ### Code Validation
-Validate your code HTML, CSS (all pages/files need to be validated!!!), display screenshots
+
+
+<details>
+<summary>Logged in event list page</summary>
+
+![Logged in event list page](assets/documentation/event_list_loggedin-validation.webp)
+</details>
+
+<details>
+<summary>Logged out event list page</summary>
+
+![Logged out event list page](assets/documentation/event-list-not-loggedin-%20validation.webp)
+</details>
+
+<details>
+<summary>Logged in(bar) event list page</summary>
+
+![Logged in(bar) event list page](assets/documentation/event-list-loggedin-bar-validation.webp)
+</details>
+
+<details>
+<summary>Log in page</summary>
+
+![Log in page](assets/documentation/login-validation.webp)
+</details>
+
+<details>
+<summary>Log out page</summary>
+
+![Log out page](assets/documentation/logout-validation.webp)
+</details>
+
+<details>
+<summary>Sign up page</summary>
+
+![Sign up page](assets/documentation/signup-validation.webp)
+</details>
+
+<details>
+<summary>Event detail page</summary>
+
+![Event detail page](assets/documentation/event-detail-validation.webp)
+</details>
+
+<details>
+<summary>My events(Bar) page</summary>
+
+![My events(Bar) page](assets/documentation/my-events-bar-validation.webp)
+</details>
+
+<details>
+<summary>My events(Public) page</summary>
+
+![My events(Public) page](assets/documentation/my-events-public-validation.webp)
+</details>
+
+<details>
+<summary>CSS</summary>
+
+![CSS](assets/documentation/css-validator.webp)
+</details>
+
 ### Manual Testing user stories or/and features
 User Story |  Test | Pass
 --- | --- | :---:
