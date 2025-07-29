@@ -7,3 +7,7 @@ iframe[id^="id_description_iframe"] {
     height: 480px !important;
     border: none !important;
 }
+
+.note-editable {
+    font-size: 24px !important;
+}

@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'events',
     'accounts.apps.AccountsConfig',
+    'cloudinary_storage',
     'cloudinary',
     'csp',
 ]
@@ -179,4 +180,9 @@ SUMMERNOTE_CONFIG = {
     'css': (
         '/static/css/summernote-custom.css',
     ),
+    'fontSize': '24',
+}
+
+CLOUDINARY_STORAGE = {
+    'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL'),
 }

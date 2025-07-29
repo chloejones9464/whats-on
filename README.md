@@ -105,31 +105,31 @@ THE most important part of this project, and I still have a love/hate relationsh
 <details>
 <summary>Chrome</summary>
 
-![Chrome]()
+![Chrome](assets/documentation/chrome-browser.webp)
 </details>
 
 <details>
 <summary>Internet Explorer</summary>
 
-![Internet Explorer]()
+![Internet Explorer](assets/documentation/internet-explorer-browser.webp)
 </details>
 
 <details>
 <summary>Safari</summary>
 
-![Safari]()
+![Safari](assets/documentation/safari-browser.webp)
 </details>
 
 <details>
 <summary>Firefox</summary>
 
-![Firefox]()
+![Firefox](assets/documentation/firefox-browser.webp)
 </details>
 
 <details>
 <summary>Opera</summary>
 
-![Opera]()
+![Opera](assets/documentation/opera-browser.webp)
 </details>
 
 ### Responsiveness

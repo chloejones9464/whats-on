@@ -187,21 +187,21 @@ https://github.com/chloejones9464/whats-on/issues/7
 <summary>Tablet</summary>
 
 ### Tablet
-![Editing events page tablet]
+[![Editing events page tablet](http://img.youtube.com/vi/QPfGLh0HjzM/0.jpg)](https://youtu.be/QPfGLh0HjzM)
 </details>
 
 <details> 
 <summary>Laptop</summary>
 
 ### Laptop
-![Editing events page laptop]
+[![Editing events page laptop](http://img.youtube.com/vi/D-1dpnVVHoM/0.jpg)](https://youtu.be/D-1dpnVVHoM)
 </details>
 
 <details> 
 <summary>1080p Screen</summary>
 
 ### 1080p screen
-![1080p Screen]
+[![1080p Screen]()]() **need to sort the description section
 </details>
 
 
@@ -373,7 +373,7 @@ https://github.com/chloejones9464/whats-on/issues/17
 <summary>Mobile(320px)</summary>
 
 ### Mobile (320px)
-![Commenting on events page mobile]
+[![Commenting on events page mobile](http://img.youtube.com/vi/D-1dpnVVHoM/0.jpg)](https://youtube.com/shorts/iJP304pT3xc)
 </details>
 
 <details> 
