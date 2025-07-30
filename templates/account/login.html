@@ -27,10 +27,10 @@
             <input type="password" name="password" placeholder="Password" autocomplete="current-password" required
               aria-describedby="id_password" id="id_password" class="form-control">
           </div>
-          <button id="login-button" type="submit" class="btn btn-primary mt-3 mb-3 w-100">Log In</button>
+          <button type="submit" class="btn mt-3 mb-3 w-100 login-button">Log In</button>
         </form>
         <hr>
-        <p class="mt-2">Don't have an account? <br>
+        <p class="mt-2 signupButton">Don't have an account? <br>
           <a id="signup-link" href="{% url 'account_signup' %}">Sign up</a>
         </p>
       </div>

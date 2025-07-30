@@ -243,6 +243,66 @@ iframe {
     font-weight: bold; 
 }
 
+
+
+.signupButton a {
+    background-color: var(--secondary-color);
+    color: black;
+    border-radius: 10px;
+    padding: 3px 10px;
+    font-weight: bold;
+    border: solid 2px black;
+}
+
+.signupButtonLink {
+    background-color: var(--secondary-color);
+    color: black;
+    border-radius: 10px;
+    padding: 3px 10px;
+    font-weight: bold;
+    border: solid 2px black;
+}
+
+.signupButton:hover {
+    background-color: #42b3ab;
+    color: black;
+    border-radius: 10px;
+    padding: 3px 10px;
+    font-weight: bold;
+    border: solid 2px black;
+}
+
+.signupButton a:hover {
+    background-color: #42b3ab;
+    color: black;
+    border-radius: 10px;
+    padding: 3px 10px;
+    font-weight: bold;
+    border: solid 2px black;
+}
+
+.login-button {
+    background-color: var(--highlight-color);
+    color: black;
+    border-radius: 10px;
+    padding: 3px 10px;
+    font-weight: bold;
+    border: solid 2px black;
+}
+
+.login-button a {
+    color: black;
+}
+
+.login-button:hover {
+    background-color: #c5c55b;
+    color: black;
+    border-radius: 10px;
+    padding: 3px 10px;
+    font-weight: bold;
+    border: solid 2px black;
+}
+
 #signup-form li {
     display: none;
 }
