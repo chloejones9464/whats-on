@@ -37,6 +37,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 DEBUG = os.environ.get('DEBUG', False)
 
 ALLOWED_HOSTS = [
+    'whats-on-events-d72a69c80c8c.herokuapp.com',
     '.herokuapp.com',
     '127.0.0.1',
 ]
