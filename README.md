@@ -53,7 +53,7 @@ Then from that selection I used Colorspace to create a palette for my site.
 ## Features:
 
 ### Navigation
-I've ketp the design on this website very. VERY simple. The reason for this came from a little market research(a chat with my co-workers at my current job). They had said that people tend to lose interest in events website because they are usually overloaded with useless navigation links and pages.
+I've kept the design on this website very. VERY simple. The reason for this came from a little market research(a chat with my co-workers at my current job). They had said that people tend to lose interest in events website because they are usually overloaded with useless navigation links and pages.
 This is as simple and easy to use as I could possibly make it. <br> The navigation consists of 3 buttons(not including the logo, leading back to the home screen). The 'Home' button takes the user to the events list page, with all the upcoming events in the area. The 'My Events' button takes the user to their saved events, or for the organiser (Bars) they will be redirected to the event's that they've created.
 ### Footer
 The footer is a simple sentence that tells the user the company that's created the website.
@@ -259,6 +259,9 @@ List of used resources for your website (text, images, snippets of code, project
   - Django website - Made my life so much easier reading through the documentation.
   
   - Media
+    - YouTube
+    - Google Photo search for testing my Cloudinary connection.
   
   - Acknowledgment
-    - acknowledgment to mentors, peers, tutors, friends, family, facilitator (who ever contributed and helped with the project)
+    - I'd like to thank my family for, again, being patient through this whole project. It's been one whirlwind!
+    - Another MASSIVE thank you to my mentor Matt. I think I've caused more than one headache for him through this project! So, thank you and sorry!!

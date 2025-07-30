@@ -8,7 +8,7 @@
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <p class="current-image-label">Event Image Currently:</p>
-        <img src="{{ form.instance.image.url }}" alt="Current Image" class="current-image-preview">
+        <img id="imagePreview" src="{{ form.instance.image.url }}" alt="Current Image" class="current-image-preview">
         <br>
         <p id="image-feedback" class="mt-2">Are you adding an image?</p>
         <label for="id_image" class="custom-upload-btn">Choose an event image</label>
@@ -40,16 +40,21 @@
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+     document.addEventListener("DOMContentLoaded", function () {
         const fileInput = document.getElementById("id_image");
         const feedback = document.getElementById("image-feedback");
         const customUploadBtn = document.querySelector(".custom-upload-btn");
+        const preview = document.getElementById("imagePreview");
 
         fileInput.addEventListener("change", function () {
             if (fileInput.files.length > 0) {
                 feedback.textContent = "🎉 You’ve added an image!";
                 feedback.style.color = "black";
                 feedback.style.fontWeight = "bold";
+
+                // Live preview update 
+                const file = fileInput.files[0];
+                preview.src = URL.createObjectURL(file);
             } else {
                 feedback.textContent = "";
             }

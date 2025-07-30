@@ -18,7 +18,7 @@ https://github.com/chloejones9464/whats-on/issues/4
 <summary>Mobile(320px)</summary>
 
 ### Mobile (320px)
-[![User profile page mobile](http://img.youtube.com/vi/1-jKdlRKk0Y/0.jpg)](https://youtube.com/shorts/1-jKdlRKk0Y)
+[![User profile page mobile](https://img.youtube.com/vi/1-jKdlRKk0Y/0.jpg)](https://youtube.com/shorts/1-jKdlRKk0Y)
 </details>
 
 <details> 
@@ -32,7 +32,7 @@ https://github.com/chloejones9464/whats-on/issues/4
 <summary>Laptop</summary>
 
 ### Laptop
-[![User profile page laptop](http://img.youtube.com/vi/LZC6_SAMchU/0.jpg)](https://youtube.com/shorts/LZC6_SAMchU)
+[![User profile page laptop](https://img.youtube.com/vi/LZC6_SAMchU/0.jpg)](https://youtube.com/shorts/LZC6_SAMchU)
 </details>
 
 <details> 
@@ -98,7 +98,7 @@ https://github.com/chloejones9464/whats-on/issues/2
 <summary>Mobile(320px)</summary>
 
 ### Mobile (320px)
-[![Signing up page mobile](http://img.youtube.com/vi/eZnx0YqBtII/0.jpg)](https://youtube.com/shorts/eZnx0YqBtII)
+[![Signing up page mobile](https://img.youtube.com/vi/eZnx0YqBtII/0.jpg)](https://youtube.com/shorts/eZnx0YqBtII)
 </details>
 
 <details> 
@@ -112,7 +112,7 @@ https://github.com/chloejones9464/whats-on/issues/2
 <summary>Laptop</summary>
 
 ### Laptop
-[![Signing up page laptop](http://img.youtube.com/vi/Y7qDogI68As/0.jpg)](https://youtu.be/Y7qDogI68As)
+[![Signing up page laptop](https://img.youtube.com/vi/Y7qDogI68As/0.jpg)](https://youtu.be/Y7qDogI68As)
 </details>
 
 <details> 
@@ -140,28 +140,28 @@ https://github.com/chloejones9464/whats-on/issues/5
 <summary>Mobile(320px)</summary>
 
 ### Mobile (320px)
-[![Create a new event page mobile](http://img.youtube.com/vi/88d3-USvKK4/0.jpg)](https://youtube.com/shorts/88d3-USvKK4)
+[![Create a new event page mobile](https://img.youtube.com/vi/88d3-USvKK4/0.jpg)](https://youtube.com/shorts/88d3-USvKK4)
 </details>
 
 <details> 
 <summary>Tablet</summary>
 
 ### Tablet
-[![Create a new event page tablet](http://img.youtube.com/vi/70404tjHypw/0.jpg)](https://youtube.com/shorts/70404tjHypw)
+[![Create a new event page tablet](https://img.youtube.com/vi/70404tjHypw/0.jpg)](https://youtube.com/shorts/70404tjHypw)
 </details>
 
 <details> 
 <summary>Laptop</summary>
 
 ### Laptop
-[![Create a new event page laptop](http://img.youtube.com/vi/P14V8r-y5_s/0.jpg)](https://youtu.be/P14V8r-y5_s)
+[![Create a new event page laptop](https://img.youtube.com/vi/P14V8r-y5_s/0.jpg)](https://youtu.be/P14V8r-y5_s)
 </details>
 
 <details> 
 <summary>1080p Screen</summary>
 
 ### 1080p screen
-[![1080p Screen](http://img.youtube.com/vi/m6Vddy7-nq4/0.jpg)](https://youtu.be/m6Vddy7-nq4)
+[![1080p Screen](https://img.youtube.com/vi/m6Vddy7-nq4/0.jpg)](https://youtu.be/m6Vddy7-nq4)
 </details>
 
 ### Editing events
@@ -180,21 +180,21 @@ https://github.com/chloejones9464/whats-on/issues/7
 <summary>Mobile(320px)</summary>
 
 ### Mobile (320px)
-[![Editing events page mobile](http://img.youtube.com/vi/gRNjkEcsG6Y/0.jpg)](https://youtube.com/shorts/gRNjkEcsG6Y)
+[![Editing events page mobile](https://img.youtube.com/vi/gRNjkEcsG6Y/0.jpg)](https://youtube.com/shorts/gRNjkEcsG6Y)
 </details>
 
 <details> 
 <summary>Tablet</summary>
 
 ### Tablet
-[![Editing events page tablet](http://img.youtube.com/vi/QPfGLh0HjzM/0.jpg)](https://youtu.be/QPfGLh0HjzM)
+[![Editing events page tablet](https://img.youtube.com/vi/QPfGLh0HjzM/0.jpg)](https://youtu.be/QPfGLh0HjzM)
 </details>
 
 <details> 
 <summary>Laptop</summary>
 
 ### Laptop
-[![Editing events page laptop](http://img.youtube.com/vi/D-1dpnVVHoM/0.jpg)](https://youtu.be/D-1dpnVVHoM)
+[![Editing events page laptop](https://img.youtube.com/vi/D-1dpnVVHoM/0.jpg)](https://youtu.be/D-1dpnVVHoM)
 </details>
 
 <details> 
@@ -373,7 +373,7 @@ https://github.com/chloejones9464/whats-on/issues/17
 <summary>Mobile(320px)</summary>
 
 ### Mobile (320px)
-[![Commenting on events page mobile](http://img.youtube.com/vi/D-1dpnVVHoM/0.jpg)](https://youtube.com/shorts/iJP304pT3xc)
+[![Commenting on events page mobile](https://img.youtube.com/vi/D-1dpnVVHoM/0.jpg)](https://youtube.com/shorts/iJP304pT3xc)
 </details>
 
 <details> 
