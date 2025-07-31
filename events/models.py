@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
+from .models import Profile
 
 STATUS = ((0, 'Draft'), (1, 'Published'))
 
@@ -53,4 +54,4 @@ class Comment(models.Model):
     def __str__(self):
         return f'Comment by {self.user.username} on {self.event.title}'
 
-    
+
