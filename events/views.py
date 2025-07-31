@@ -69,7 +69,7 @@ def event_list(request):
         events = events.filter(
             organizer__username__icontains=selected_organizer
         )
-        
+
     all_locations = Event.objects.values_list('location', flat=True).distinct()
     unique_locations = sorted(set(loc.strip() for loc in all_locations if loc))
 
