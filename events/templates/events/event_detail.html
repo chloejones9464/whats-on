@@ -45,9 +45,9 @@
             {% endif %}
 
             {% if comment.manually_edited %}
-            <small class="{% if not comment.approved %}pending-comment{% endif %}">Edited at: {{ comment.updated_at|date:"d M Y, H:i"|timezone:"Europe/London" }}</small>
+            <small class="{% if not comment.approved %}pending-comment{% endif %}">Edited at: {{ comment.updated_at|date:"d M Y, H:i" }}</small>
             {% else %}
-            <small class="{% if not comment.approved %}pending-comment{% endif %}">Posted at: {{ comment.posted_at|date:"d M Y, H:i"|timezone:"Europe/London" }}</small>
+            <small class="{% if not comment.approved %}pending-comment{% endif %}">Posted at: {{ comment.posted_at|date:"d M Y, H:i" }}</small>
             {% endif %}
 
 
