@@ -28,8 +28,8 @@
         {% for comment in comments %}
 
         {% if comment.approved or comment.user == user %}
-        <div class="comment {% if not comment.approved %}pending-comment{% endif %}">
-            <p><strong>{{ comment.user.username }}</strong></p>
+        <div class="comment">
+            <p class="{% if not comment.approved %}pending-comment{% endif %}"><strong>{{ comment.user.username }}</strong></p>
 
             {% if user.is_authenticated and editing_comment_id == comment.id %}
             <!-- Edit form -->
@@ -41,18 +41,18 @@
             </form>
             {% else %}
             <!-- Show comment normally -->
-            <p>{{ comment.content }}</p>
+            <p class="{% if not comment.approved %}pending-comment{% endif %}">{{ comment.content }}</p>
             {% endif %}
 
             {% if comment.manually_edited %}
-            <small>Edited at: {{ comment.updated_at|date:"d M Y, H:i" }}</small>
+            <small class="{% if not comment.approved %}pending-comment{% endif %}">Edited at: {{ comment.updated_at|date:"d M Y, H:i" }}</small>
             {% else %}
-            <small>Posted at: {{ comment.posted_at|date:"d M Y, H:i" }}</small>
+            <small class="{% if not comment.approved %}pending-comment{% endif %}">Posted at: {{ comment.posted_at|date:"d M Y, H:i" }}</small>
             {% endif %}
 
 
             {% if not comment.approved and comment.user == user %}
-            <p><em>(Pending approval)</em></p>
+            <p class="{% if not comment.approved %}pending-comment{% endif %}"><em>(Pending approval)</em></p>
             {% endif %}
 
             {% if user.is_authenticated and comment.user == user %}
