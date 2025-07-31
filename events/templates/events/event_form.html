@@ -8,7 +8,12 @@
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <p class="current-image-label">Event Image Currently:</p>
-        <img id="imagePreview" src="{{ form.instance.image.url }}" alt="Current Image" class="current-image-preview">
+        <!-- Display current image if it exists -->
+        {% if form.instance.image.url %}
+            <img id="imagePreview" src="{{ form.instance.image.url }}" alt="Current Image" class="current-image-preview">
+        {% else %}
+            <img id="imagePreview" src="https://res.cloudinary.com/dcvyln5fy/image/upload/placeholder_image_rwbnhz.webp" alt="Default Image" class="current-image-preview">
+        {% endif %}
         <br>
         <p id="image-feedback" class="mt-2">Are you adding an image?</p>
         <label for="id_image" class="custom-upload-btn">Choose an event image</label>
