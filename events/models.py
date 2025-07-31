@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
-from .models import Profile
 
 STATUS = ((0, 'Draft'), (1, 'Published'))
 
