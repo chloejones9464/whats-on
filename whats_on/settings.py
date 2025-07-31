@@ -54,7 +54,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
-    'events',
     'events.apps.EventsConfig',
     'accounts.apps.AccountsConfig',
     'cloudinary_storage',
