@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('events', '0009_comment_manually_edited'),
+        ("events", "0009_comment_manually_edited"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='comment',
-            name='content',
+            model_name="comment",
+            name="content",
             field=models.CharField(max_length=200),
         ),
     ]

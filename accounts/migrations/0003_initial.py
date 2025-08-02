@@ -10,17 +10,38 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('accounts', '0002_delete_profile'),
+        ("accounts", "0002_delete_profile"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Profile',
+            name="Profile",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('user_type', models.CharField(choices=[('public', 'Public'), ('bar', 'Bar Owner')], default='public', max_length=10)),
-                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "user_type",
+                    models.CharField(
+                        choices=[("public", "Public"), ("bar", "Bar Owner")],
+                        default="public",
+                        max_length=10,
+                    ),
+                ),
+                (
+                    "user",
+                    models.OneToOneField(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
     ]

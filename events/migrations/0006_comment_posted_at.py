@@ -7,14 +7,16 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('events', '0005_rename_comment_comment_content'),
+        ("events", "0005_rename_comment_comment_content"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='comment',
-            name='posted_at',
-            field=models.DateTimeField(auto_now_add=True, default=django.utils.timezone.now),
+            model_name="comment",
+            name="posted_at",
+            field=models.DateTimeField(
+                auto_now_add=True, default=django.utils.timezone.now
+            ),
             preserve_default=False,
         ),
     ]

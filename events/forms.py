@@ -9,34 +9,39 @@ class EventForm(forms.ModelForm):
     class Meta:
         model = Event
         fields = [
-            'image',
-            'title',
-            'excerpt',
-            'description',
-            'date',
-            'location',
-            'status',
+            "image",
+            "title",
+            "excerpt",
+            "description",
+            "date",
+            "location",
+            "status",
         ]
         widgets = {
-            'description': SummernoteWidget(),
-            'date': forms.DateTimeInput(attrs={
-                'type': 'datetime-local',
-                'min': datetime.datetime.now().strftime('%Y-%m-%dT%H:%M'),}),
+            "description": SummernoteWidget(),
+            "date": forms.DateTimeInput(
+                attrs={
+                    "type": "datetime-local",
+                    "min": datetime.datetime.now().strftime("%Y-%m-%dT%H:%M"),
+                }
+            ),
         }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # Remove the broken 'hidden="true"' manually
-        self.fields['description'].widget.attrs.pop('hidden', None)
+        self.fields["description"].widget.attrs.pop("hidden", None)
 
 
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ['content']
+        fields = ["content"]
         labels = {
-            'content': '',
+            "content": "",
         }
         widgets = {
-            'comment': forms.Textarea(attrs={'rows': 3, 'placeholder': 'Leave a comment...'}),
+            "comment": forms.Textarea(
+                attrs={"rows": 3, "placeholder": "Leave a comment..."}
+            ),
         }

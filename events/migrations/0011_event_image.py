@@ -7,13 +7,19 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('events', '0010_alter_comment_content'),
+        ("events", "0010_alter_comment_content"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='event',
-            name='image',
-            field=cloudinary.models.CloudinaryField(blank=True, default='placeholder_image', max_length=255, null=True, verbose_name='image'),
+            model_name="event",
+            name="image",
+            field=cloudinary.models.CloudinaryField(
+                blank=True,
+                default="placeholder_image",
+                max_length=255,
+                null=True,
+                verbose_name="image",
+            ),
         ),
     ]

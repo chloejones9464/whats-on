@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('events', '0008_comment_updated_at'),
+        ("events", "0008_comment_updated_at"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='comment',
-            name='manually_edited',
+            model_name="comment",
+            name="manually_edited",
             field=models.BooleanField(default=False),
         ),
     ]

@@ -12,14 +12,16 @@ from django.db.models.functions import TruncDate
 # Create your views here.
 class EventList(generic.ListView):
     queryset = Event.objects.all()
-    template_name = 'events/index.html'
-    paginate_by = 6  # Number of events per page   
+    template_name = "events/index.html"
+    paginate_by = 6  # Number of events per page
 
     def get_queryset(self):
-        queryset = Event.objects.filter(date__gte=timezone.now()).order_by('date')
-        location = self.request.GET.get('location')
-        date = self.request.GET.get('date')
-        organizer = self.request.GET.get('organizer')
+        queryset = Event.objects.filter(date__gte=timezone.now()).order_by(
+            "date"
+        )
+        location = self.request.GET.get("location")
+        date = self.request.GET.get("date")
+        organizer = self.request.GET.get("organizer")
         if location:
             queryset = queryset.filter(location__iexact=location)
         if date:
@@ -31,7 +33,9 @@ class EventList(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # Add list of locations for the dropdown
-        context['locations'] = Event.objects.values_list('location', flat=True).distinct()
+        context["locations"] = Event.objects.values_list(
+            "location", flat=True
+        ).distinct()
         return context
 
 
@@ -40,26 +44,32 @@ def my_events(request):
     liked_events = request.user.liked_events.all()
     created_events = Event.objects.filter(organizer=request.user)
 
-    return render(request, 'events/my_events.html', {
-        'liked_events': liked_events,
-        'created_events': created_events,
-    })
+    return render(
+        request,
+        "events/my_events.html",
+        {
+            "liked_events": liked_events,
+            "created_events": created_events,
+        },
+    )
 
 
 def event_list(request):
     events = Event.objects.all()
 
     # Get filter values from GET request
-    selected_date = request.GET.get('date')
-    selected_location = request.GET.get('location')
-    selected_organizer = request.GET.get('organizer')
+    selected_date = request.GET.get("date")
+    selected_location = request.GET.get("location")
+    selected_organizer = request.GET.get("organizer")
 
     # Apply filters if present
 
     if selected_date:
         try:
             date_obj = datetime.strptime(selected_date, "%Y-%m-%d").date()
-            events = events.annotate(date_only=TruncDate('date')).filter(date_only=date_obj)
+            events = events.annotate(date_only=TruncDate("date")).filter(
+                date_only=date_obj
+            )
         except ValueError:
             pass  # In case of invalid date input
 
@@ -70,16 +80,20 @@ def event_list(request):
             organizer__username__icontains=selected_organizer
         )
 
-    all_locations = Event.objects.values_list('location', flat=True).distinct()
+    all_locations = Event.objects.values_list("location", flat=True).distinct()
     unique_locations = sorted(set(loc.strip() for loc in all_locations if loc))
 
-    return render(request, 'events/event_list.html', {
-        'event_list': events,
-        'selected_date': selected_date,
-        'selected_location': selected_location,
-        'selected_organizer': selected_organizer,
-        'locations': unique_locations,
-    })
+    return render(
+        request,
+        "events/event_list.html",
+        {
+            "event_list": events,
+            "selected_date": selected_date,
+            "selected_location": selected_location,
+            "selected_organizer": selected_organizer,
+            "locations": unique_locations,
+        },
+    )
 
 
 @login_required
@@ -91,52 +105,57 @@ def like_event(request, event_id):
     else:
         event.liked_by.add(request.user)  # like
 
-    return redirect(request.META.get('HTTP_REFERER', 'home'))  # go back to previous page
+    return redirect(
+        request.META.get("HTTP_REFERER", "home")
+    )  # go back to previous page
 
 
 @login_required
 def event_create(request):
     # Only allow pubs to access this
-    if not hasattr(request.user, 'profile') or request.user.profile.user_type != 'organiser':
-        return redirect('event_list')
+    if (
+        not hasattr(request.user, "profile")
+        or request.user.profile.user_type != "organiser"
+    ):
+        return redirect("event_list")
 
-    if request.method == 'POST':
+    if request.method == "POST":
         form = EventForm(request.POST, request.FILES)
         if form.is_valid():
             event = form.save(commit=False)
             event.organizer = request.user
             event.save()
-            return redirect('my_events') 
+            return redirect("my_events")
     else:
         form = EventForm()
 
-    return render(request, 'events/event_form.html', {'form': form})
+    return render(request, "events/event_form.html", {"form": form})
 
 
 @login_required
 def event_edit(request, pk):
     event = get_object_or_404(Event, pk=pk, organizer=request.user)
 
-    if request.method == 'POST':
+    if request.method == "POST":
         form = EventForm(request.POST, request.FILES, instance=event)
         if form.is_valid():
             form.save()
-            return redirect('my_events')
+            return redirect("my_events")
     else:
         form = EventForm(instance=event)
 
-    return render(request, 'events/event_form.html', {'form': form})
+    return render(request, "events/event_form.html", {"form": form})
 
 
 @login_required
 def event_delete(request, pk):
     event = get_object_or_404(Event, pk=pk, organizer=request.user)
 
-    if request.method == 'POST':
+    if request.method == "POST":
         event.delete()
-        return redirect('my_events')
+        return redirect("my_events")
 
-    return redirect('my_events')
+    return redirect("my_events")
 
 
 @login_required
@@ -147,28 +166,34 @@ def event_detail(request, pk):
     editing_comment_id = None
 
     if request.user.is_authenticated:
-        comments = event.comments.filter(Q(approved=True) | Q(user=request.user)).order_by('-posted_at')
+        comments = event.comments.filter(
+            Q(approved=True) | Q(user=request.user)
+        ).order_by("-posted_at")
     else:
-        comments = event.comments.filter(approved=True).order_by('-posted_at')
+        comments = event.comments.filter(approved=True).order_by("-posted_at")
 
-    if request.method == 'POST':
-        if 'delete_comment' in request.POST:
-            comment_id = request.POST['delete_comment']
-            comment = get_object_or_404(Comment, id=comment_id, user=request.user)
+    if request.method == "POST":
+        if "delete_comment" in request.POST:
+            comment_id = request.POST["delete_comment"]
+            comment = get_object_or_404(
+                Comment, id=comment_id, user=request.user
+            )
             comment.delete()
-            return redirect('event_detail', pk=pk)
+            return redirect("event_detail", pk=pk)
 
-        elif 'edit_comment_id' in request.POST:
-            editing_comment_id = int(request.POST['edit_comment_id'])
+        elif "edit_comment_id" in request.POST:
+            editing_comment_id = int(request.POST["edit_comment_id"])
 
-        elif 'updated_content' in request.POST:
-            comment_id = request.POST.get('comment_id')
-            updated_text = request.POST.get('updated_content')
-            comment = get_object_or_404(Comment, id=comment_id, user=request.user)
+        elif "updated_content" in request.POST:
+            comment_id = request.POST.get("comment_id")
+            updated_text = request.POST.get("updated_content")
+            comment = get_object_or_404(
+                Comment, id=comment_id, user=request.user
+            )
             comment.content = updated_text
             comment.manually_edited = True
             comment.save()
-            return redirect('event_detail', pk=pk)
+            return redirect("event_detail", pk=pk)
 
         else:
             form = CommentForm(request.POST)
@@ -177,11 +202,15 @@ def event_detail(request, pk):
                 comment.event = event
                 comment.user = request.user
                 comment.save()
-                return redirect('event_detail', pk=event.pk)
+                return redirect("event_detail", pk=event.pk)
 
-    return render(request, 'events/event_detail.html', {
-       'event': event,
-       'comments': comments,
-       'form': form,
-       'editing_comment_id': editing_comment_id,
-    })
+    return render(
+        request,
+        "events/event_detail.html",
+        {
+            "event": event,
+            "comments": comments,
+            "form": form,
+            "editing_comment_id": editing_comment_id,
+        },
+    )

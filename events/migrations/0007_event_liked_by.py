@@ -7,14 +7,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('events', '0006_comment_posted_at'),
+        ("events", "0006_comment_posted_at"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='event',
-            name='liked_by',
-            field=models.ManyToManyField(blank=True, related_name='liked_events', to=settings.AUTH_USER_MODEL),
+            model_name="event",
+            name="liked_by",
+            field=models.ManyToManyField(
+                blank=True,
+                related_name="liked_events",
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
     ]

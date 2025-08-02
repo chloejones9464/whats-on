@@ -86,6 +86,16 @@ AllAuth,
 Cloudinary
 ## Testing
 THE most important part of this project, and I still have a love/hate relationship with! <br> Here we go!!
+<br>
+
+#### Superuser access
+<details>
+
+<summary>Superuser access credentials here!</summary>
+Username: codeinstitute <br>
+Password: Helloworld!
+</details>
+
 ### Google's Lighthouse Performance
 
 <details>
@@ -195,6 +205,62 @@ I've displayed the responsiveness of this site in my [user stories](userstories.
 <summary>CSS</summary>
 
 ![CSS](assets/documentation/css-validator.webp)
+</details>
+
+### CI Python Linter
+
+<details>
+<summary>admin.py</summary>
+
+![admin.py linter](assets/documentation/admin.py-linter.webp)
+</details>
+
+<details>
+<summary>apps.py</summary>
+
+![apps.py linter](assets/documentation/apps.py-linter.webp)
+</details>
+
+<details>
+<summary>forms.py</summary>
+
+![forms.py linter](assets/documentation/forms.py-linter.webp)
+</details>
+
+<details>
+<summary>models.py</summary>
+
+![models.py linter](assets/documentation/models.py-linter.webp)
+</details>
+
+<details>
+<summary>settings.py</summary>
+
+![settings.py  linter](assets/documentation/settings.py-linter.webp)
+</details>
+
+<details>
+<summary>signals.py</summary>
+
+![signals.py linter](assets/documentation/signals.py-linter.webp)
+</details>
+
+<details>
+<summary>urls.py</summary>
+
+![urls.py linter](assets/documentation/urls.py-linter.webp)
+</details>
+
+<details>
+<summary>urls.py project-level</summary>
+
+![urls.py project-level linter](assets/documentation/urls.py-project-level-linter.webp)
+</details>
+
+<details>
+<summary>views.py</summary>
+
+![views.py linter](assets/documentation/views.py-linter.webp)
 </details>
 
 ### Manual Testing user stories or/and features

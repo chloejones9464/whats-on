@@ -7,13 +7,19 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('events', '0011_event_image'),
+        ("events", "0011_event_image"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='event',
-            name='image',
-            field=cloudinary.models.CloudinaryField(blank=True, default='https://res.cloudinary.com/dcvyln5fy/image/upload/v1752856652/placeholder_image_rwbnhz.webp', max_length=255, null=True, verbose_name='image'),
+            model_name="event",
+            name="image",
+            field=cloudinary.models.CloudinaryField(
+                blank=True,
+                default="https://res.cloudinary.com/dcvyln5fy/image/upload/v1752856652/placeholder_image_rwbnhz.webp",
+                max_length=255,
+                null=True,
+                verbose_name="image",
+            ),
         ),
     ]
