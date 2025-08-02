@@ -2,6 +2,7 @@ from django import forms
 from .models import Event
 from django_summernote.widgets import SummernoteWidget
 from .models import Comment
+import datetime
 
 
 class EventForm(forms.ModelForm):
@@ -9,7 +10,7 @@ class EventForm(forms.ModelForm):
         model = Event
         fields = [
             'image',
-            'title',            
+            'title',
             'excerpt',
             'description',
             'date',
@@ -18,7 +19,9 @@ class EventForm(forms.ModelForm):
         ]
         widgets = {
             'description': SummernoteWidget(),
-            'date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+            'date': forms.DateTimeInput(attrs={
+                'type': 'datetime-local',
+                'min': datetime.datetime.now().strftime('%Y-%m-%dT%H:%M'),}),
         }
 
     def __init__(self, *args, **kwargs):

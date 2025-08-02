@@ -164,6 +164,25 @@ https://github.com/chloejones9464/whats-on/issues/5
 [![1080p Screen](https://img.youtube.com/vi/m6Vddy7-nq4/0.jpg)](https://youtu.be/m6Vddy7-nq4)
 </details>
 
+
+### Add image to event(create a new event sub-issue)
+
+<details> 
+<summary>Add image to event GitHub User Story</summary>
+
+The link below takes you to the sub-issue for Create a new event. This one is for the 'Add an image to the event'.
+<br>
+https://github.com/chloejones9464/whats-on/issues/19
+
+</details>
+
+<details>
+<summary>Add image to new event(mobile)</summary>
+
+[![Add image to event(mobile)](https://img.youtube.com/vi/gR_Bpa26p-A/0.jpg)](https://youtube.com/shorts/gR_Bpa26p-A)
+</details>
+
+
 ### Editing events
 
 <details>

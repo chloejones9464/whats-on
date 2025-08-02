@@ -237,6 +237,10 @@ I wanted to the public only to see the published events and not the drafts. I ad
 #### Summernote W3C Validator
 Minor HTML validation warnings may appear due to the django-summernote editor's rendering behavior. These are frontend-only and do not impact site performance or user experience.
 
+#### Log in/Sign up button
+This was a little bit of a pain in the bottom. I ran the code through the WAVE site(to test accessibility) and the button came up as a contrast error. I had fixed these and made it so that the error have gone and the contrast was just right!
+
+
 ## Deployment
 
 #### Creating Repository on GitHub

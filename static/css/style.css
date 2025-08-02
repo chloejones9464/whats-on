@@ -217,6 +217,15 @@ form .btn-primary {
   margin-bottom: 10px;
 }
 
+#imagePreview {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+    justify-self: center;
+}
+
 iframe {
     border-radius: 10px;
 
