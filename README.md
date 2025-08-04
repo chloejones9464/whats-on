@@ -88,14 +88,6 @@ Cloudinary
 THE most important part of this project, and I still have a love/hate relationship with! <br> Here we go!!
 <br>
 
-#### Superuser access
-<details>
-
-<summary>Superuser access credentials here!</summary>
-Username: codeinstitute <br>
-Password: Helloworld!
-</details>
-
 ### Google's Lighthouse Performance
 
 <details>
