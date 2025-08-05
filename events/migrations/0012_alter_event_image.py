@@ -16,7 +16,10 @@ class Migration(migrations.Migration):
             name="image",
             field=cloudinary.models.CloudinaryField(
                 blank=True,
-                default="https://res.cloudinary.com/dcvyln5fy/image/upload/v1752856652/placeholder_image_rwbnhz.webp",
+                default=(
+                    "https://res.cloudinary.com/dcvyln5fy/image/upload/"
+                    "v1752856652/placeholder_image_rwbnhz.webp"
+                ),
                 max_length=255,
                 null=True,
                 verbose_name="image",

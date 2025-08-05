@@ -4,15 +4,13 @@
 
 ### User Profile Page
 
-<details>
-<summary>User Profile Page GitHub User Story</summary>
-<br>
+#### User Profile Page GitHub User Story
+This feature allows logged-in users to view a list of events they have created. It helps them easily manage, update, or delete their own events from one place. <br>
 The link below will take you to the issue created for the User profile page.
 <br>
 
 https://github.com/chloejones9464/whats-on/issues/4
 
-</details>
 
 <details> 
 <summary>Mobile(320px)</summary>
@@ -44,15 +42,12 @@ https://github.com/chloejones9464/whats-on/issues/4
 
 ### Returning User
 
-<details>
-<summary>Returning User GitHub User Story</summary>
-<br>
+#### Returning User GitHub User Story
+This feature allows returning users to log into their account so they can access any events they’ve created, saved, or interacted with previously. <br>
 The link below will take you to the issue created for the Returning User user story. The screenshots below show the alert users will get if they do not have a log in. If they have a log in, the screen will take them to the event list of the site.
 <br>
 
 https://github.com/chloejones9464/whats-on/issues/3
-
-</details>
 
 <details> 
 <summary>Mobile(320px)</summary>
@@ -84,15 +79,12 @@ https://github.com/chloejones9464/whats-on/issues/3
 
 ### Signing up
 
-<details>
-<summary>Signing up GitHub User Story</summary>
-<br>
+#### Signing up GitHub User Story
+This feature allows new users to sign up for an account so they can start saving events they’re interested in and interact with the platform.<br>
 The link below will take you to the issue created for the Signing up user story.
 <br>
 
 https://github.com/chloejones9464/whats-on/issues/2
-
-</details>
 
 <details> 
 <summary>Mobile(320px)</summary>
@@ -126,15 +118,12 @@ https://github.com/chloejones9464/whats-on/issues/2
 
 ### Create a new event
 
-<details>
-<summary>Create a new event GitHub User Story</summary>
-<br>
+#### Create a new event GitHub User Story
+This feature allows event managers to create and publish new events so they can share them with the community and encourage attendance. <br>
 The link below will take you to the issue created for the Create a new event user story.
 <br>
 
 https://github.com/chloejones9464/whats-on/issues/5
-
-</details>
 
 <details> 
 <summary>Mobile(320px)</summary>
@@ -167,14 +156,12 @@ https://github.com/chloejones9464/whats-on/issues/5
 
 ### Add image to event(create a new event sub-issue)
 
-<details> 
-<summary>Add image to event GitHub User Story</summary>
 
+#### Add image to event GitHub User Story
+This feature lets registered users upload an image when creating a new event, making it more visually appealing and easier for attendees to recognise and engage with. <br>
 The link below takes you to the sub-issue for Create a new event. This one is for the 'Add an image to the event'.
 <br>
 https://github.com/chloejones9464/whats-on/issues/19
-
-</details>
 
 <details>
 <summary>Add image to new event(mobile)</summary>
@@ -185,15 +172,12 @@ https://github.com/chloejones9464/whats-on/issues/19
 
 ### Editing events
 
-<details>
-<summary>Editing events GitHub User Story</summary>
-<br>
+#### Editing events GitHub User Story
+This feature allows organizers to edit the details of their events, helping them keep information accurate and up to date for attendees.<br>
 The link below will take you to the issue created for the Editing events user story.
 <br>
 
 https://github.com/chloejones9464/whats-on/issues/7
-
-</details>
 
 <details> 
 <summary>Mobile(320px)</summary>
@@ -226,9 +210,8 @@ https://github.com/chloejones9464/whats-on/issues/7
 
 ### Deleting events
 
-<details>
-<summary>Deleting events GitHub User Story</summary>
-<br>
+#### Deleting events GitHub User Story
+This feature allows organizers to delete events they’ve created, removing them from public view when they’re no longer needed or relevant.<br>
 The link below will take you to the issue created for the Deleting events user story.
 <br>
 
@@ -268,9 +251,8 @@ https://github.com/chloejones9464/whats-on/issues/8
 
 ### List of upcoming events
 
-<details>
-<summary>List of upcoming events and filter function GitHub User Story</summary>
-<br>
+#### List of upcoming events and filter function GitHub User Story
+These features allow organizers to delete events that are no longer active, removing them from public view, and give users the ability to filter events by date or category so they can quickly find ones that are most relevant to them.<br>
 The link below will take you to the issue created for the List of upcoming events and filter function user story.
 <br>
 
@@ -313,9 +295,8 @@ https://github.com/chloejones9464/whats-on/issues/11
 
 ### Details of the events
 
-<details>
-<summary>Details of the events GitHub User Story</summary>
-<br>
+#### Details of the events GitHub User Story
+This feature allows users to view full details of an event, helping them decide whether they’re interested in attending.<br>
 The link below will take you to the issue created for the Details of the events user story.
 <br>
 
@@ -353,9 +334,8 @@ https://github.com/chloejones9464/whats-on/issues/12
 
 ### Past events filter
 
-<details>
-<summary>Past events filter GitHub User Story</summary>
-<br>
+#### Past events filter GitHub User Story
+This feature ensures that past events are hidden from the main event list, so users only see upcoming events and don’t get confused by outdated information.<br>
 The link below will take you to the issue created for the Past events filter user story.
 <br>
 
@@ -368,9 +348,8 @@ https://github.com/chloejones9464/whats-on/issues/13
 
 ### Commenting on events
 
-<details>
-<summary>Commenting on events and Timestamps visible on comments GitHub User Story</summary>
-<br>
+#### Commenting on events and Timestamps visible on comments GitHub User Story
+This feature allows users to comment on events to ask questions or share opinions. Each comment includes a visible timestamp, helping users follow conversations in context and see how recent the discussion is. <br>
 The link below will take you to the issue created for the Commenting on events Timestamps visible on comments user stories.
 
 The mobile section of this user story also displays the edit and delete function of the comments.
@@ -418,16 +397,14 @@ https://github.com/chloejones9464/whats-on/issues/17
 
 ### Superuser control in case of inappropriate comments
 
-<details>
-<summary>Superuser control in case of inappropriate comments GitHub User Story</summary>
-<br>
+#### Superuser control in case of inappropriate comments GitHub User Story
+This feature gives the superuser (admin) the ability to delete inappropriate comments, helping to keep the event pages respectful and well-moderated.<br>
 The link below will take you to the issue created for the Superuser control in case of inappropriate comments user story.
 <br>
 
 https://github.com/chloejones9464/whats-on/issues/16
 
 ![Superuser control](assets/documentation/superuser-control-comments.webp)
-</details>
 
 
 

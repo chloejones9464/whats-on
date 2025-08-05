@@ -5,7 +5,7 @@ from django.db.models import Q
 from .models import Event, Comment
 from .forms import EventForm, CommentForm
 from django.utils import timezone
-from datetime import datetime
+from datetime import datetime, date
 from django.db.models.functions import TruncDate
 
 
@@ -67,11 +67,12 @@ def event_list(request):
     if selected_date:
         try:
             date_obj = datetime.strptime(selected_date, "%Y-%m-%d").date()
-            events = events.annotate(date_only=TruncDate("date")).filter(
-                date_only=date_obj
-            )
+            if date_obj >= date.today():
+                events = events.annotate(date_only=TruncDate("date")).filter(
+                    date_only=date_obj
+                )
         except ValueError:
-            pass  # In case of invalid date input
+            pass  # In case of invalid date format
 
     if selected_location:
         events = events.filter(location__icontains=selected_location)
@@ -92,6 +93,7 @@ def event_list(request):
             "selected_location": selected_location,
             "selected_organizer": selected_organizer,
             "locations": unique_locations,
+            "today": date.today().isoformat(),
         },
     )
 
