@@ -6,7 +6,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     user_type = models.CharField(
         max_length=10,
-        choices=[("public", "Public"), ("bar", "Bar Owner")],
+        choices=[("public", "Public"), ("organizer", "Bar Owner")],
         default="public",
     )
     bar_name = models.CharField(max_length=100, blank=True)
