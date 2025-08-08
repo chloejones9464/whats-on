@@ -32,6 +32,10 @@ nav {
     font-size: 1.3rem
 }
 
+.nav-spacing {
+    gap: 20px;
+}
+
 #navbar-pages a {
     padding: 10px 20px;
 }
@@ -138,7 +142,6 @@ form .btn-primary {
 }
 
 .sign-up-text {
-    height: 204px;
     align-self: center;
 }
 
@@ -244,6 +247,10 @@ iframe {
 
 }
 
+.homepage-image-order {
+    order: 1;
+}
+
 /*Events page*/
 
 .card {
@@ -264,8 +271,6 @@ iframe {
     font-size: 1rem; 
     font-weight: bold; 
 }
-
-
 
 .signupButton a {
     background-color: var(--secondary-color);
@@ -392,33 +397,15 @@ iframe {
 
 /* Media queries */
 
-@media (min-width: 684px) {
-    .welcome-text {
-        height: 239px;
+@media (min-width: 576px) {
+    .homepage-image-order {
+        order: 0;
     }
 }
 
 @media (max-width: 768px) {
     .event-detail-image {
         height: 200px;
-    }
-}
-
-@media (min-width: 768px) {    
-    .sign-up-text {
-        height: 200px;
-    }
-    .welcome-text {
-        height: 344px;
-    }
-}
-
-@media (min-width: 943px) {
-    .sign-up-text {
-        height: 180px;
-    }
-    .welcome-text {
-        height: 310px;
     }
 }
 
