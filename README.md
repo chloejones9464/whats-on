@@ -508,6 +508,9 @@ This was a little bit of a pain in the bottom. I ran the code through the WAVE s
 #### signals.py
 There was an issue with saving and loading a profile once it's created. The screen would throw a 500 Server error. I turned the Debug to True and worked out the problem from there. My clever mentor Matt saw that the path for the profile wasn't right and that we had to alter the path in the signals.py. BOOM! A site that saves profiles!
 
+#### My events page
+The page was showing part of the template that should only show for people that have stumbles ont he page but have not logged in or signed up. I was logged in as a Bar owner. This was an issue! I figured out that the elif statement for the Bar owner was looking for 'bar' and not organizer'. A simple swap of the user type names and it worked perfectly.
+
 ## Deployment
 
 #### Creating Repository on GitHub
