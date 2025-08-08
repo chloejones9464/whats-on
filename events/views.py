@@ -21,13 +21,13 @@ class EventList(generic.ListView):
         )
         location = self.request.GET.get("location")
         date = self.request.GET.get("date")
-        organizer = self.request.GET.get("organizer")
+        bar = self.request.GET.get("bar")
         if location:
             queryset = queryset.filter(location__iexact=location)
         if date:
             queryset = queryset.filter(date=date)
-        if organizer:
-            queryset = queryset.filter(organizer__username__iexact=organizer)
+        if bar:
+            queryset = queryset.filter(bar__username__iexact=bar)
         return queryset
 
     def get_context_data(self, **kwargs):
@@ -42,7 +42,7 @@ class EventList(generic.ListView):
 @login_required
 def my_events(request):
     liked_events = request.user.liked_events.all()
-    created_events = Event.objects.filter(organizer=request.user)
+    created_events = Event.objects.filter(bar=request.user)
 
     return render(
         request,
@@ -60,7 +60,7 @@ def event_list(request):
     # Get filter values from GET request
     selected_date = request.GET.get("date")
     selected_location = request.GET.get("location")
-    selected_organizer = request.GET.get("organizer")
+    selected_bar = request.GET.get("bar")
 
     # Apply filters if present
 
@@ -76,9 +76,9 @@ def event_list(request):
 
     if selected_location:
         events = events.filter(location__icontains=selected_location)
-    if selected_organizer:
+    if selected_bar:
         events = events.filter(
-            organizer__username__icontains=selected_organizer
+            bar__username__icontains=selected_bar
         )
 
     all_locations = Event.objects.values_list("location", flat=True).distinct()
@@ -91,7 +91,7 @@ def event_list(request):
             "event_list": events,
             "selected_date": selected_date,
             "selected_location": selected_location,
-            "selected_organizer": selected_organizer,
+            "selected_bar": selected_bar,
             "locations": unique_locations,
             "today": date.today().isoformat(),
         },
@@ -117,7 +117,7 @@ def event_create(request):
     # Only allow pubs to access this
     if (
         not hasattr(request.user, "profile")
-        or request.user.profile.user_type != "organiser"
+        or request.user.profile.user_type != "bar"
     ):
         return redirect("event_list")
 
@@ -125,7 +125,7 @@ def event_create(request):
         form = EventForm(request.POST, request.FILES)
         if form.is_valid():
             event = form.save(commit=False)
-            event.organizer = request.user
+            event.bar = request.user
             event.save()
             return redirect("my_events")
     else:
@@ -136,7 +136,7 @@ def event_create(request):
 
 @login_required
 def event_edit(request, pk):
-    event = get_object_or_404(Event, pk=pk, organizer=request.user)
+    event = get_object_or_404(Event, pk=pk, bar=request.user)
 
     if request.method == "POST":
         form = EventForm(request.POST, request.FILES, instance=event)
@@ -151,7 +151,7 @@ def event_edit(request, pk):
 
 @login_required
 def event_delete(request, pk):
-    event = get_object_or_404(Event, pk=pk, organizer=request.user)
+    event = get_object_or_404(Event, pk=pk, bar=request.user)
 
     if request.method == "POST":
         event.delete()
