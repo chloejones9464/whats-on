@@ -50,8 +50,8 @@
         </div>
     </div>
 
-    {% elif user.is_authenticated and user.profile.user_type == 'organiser' %}
-<div class="container-fluid">
+    {% elif user.is_authenticated and user.profile.user_type == 'bar' %}
+    <div class="container-fluid">
         <h2 class="mt-1">Events You Created ✍️</h2>
         <hr>
         <div class="create-event-link mb-4">
@@ -70,8 +70,10 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ event.title }}</h5>
                         <p class="card-text">{{ event.excerpt }}</p>
-                        <a id="viewButton-{{ event.id }}" href="{% url 'event_detail' event.pk %}" class="btn viewButton">View</a>
-                        <a id="editButton-{{ event.id }}" href="{% url 'event_edit' event.pk %}" class="btn editButton">Edit</a>
+                        <a id="viewButton-{{ event.id }}" href="{% url 'event_detail' event.pk %}"
+                            class="btn viewButton">View</a>
+                        <a id="editButton-{{ event.id }}" href="{% url 'event_edit' event.pk %}"
+                            class="btn editButton">Edit</a>
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                             data-bs-target="#deleteButton{{ event.pk }}">Delete</button>
                     </div>
@@ -95,7 +97,8 @@
                                 {% csrf_token %}
                                 <button type="submit" class="btn btn-danger">Yes, delete it!</button>
                             </form>
-                            <button type="button" class="btn btn-secondary noButton" data-bs-dismiss="modal">Actually, no</button>
+                            <button type="button" class="btn btn-secondary noButton" data-bs-dismiss="modal">Actually,
+                                no</button>
                         </div>
                     </div>
                 </div>
@@ -108,13 +111,13 @@
 </div>
 
 
-    {% else %}
-    <div id="page-header" class="text-center my-5">
-        <h2>Welcome to What's on!</h2>
-        <p>Please <a href="{% url 'account_login' %}">log in</a> to view the latest events.</p>
-        <p>Don't have an account? <a href="{% url 'account_signup' %}">Sign up</a> now!</p>
-    </div>
-    {% endif %}
+{% else %}
+<div id="page-header" class="text-center my-5">
+    <h2>Welcome to What's on!</h2>
+    <p>Please <a href="{% url 'account_login' %}">log in</a> to view the latest events.</p>
+    <p>Don't have an account? <a href="{% url 'account_signup' %}">Sign up</a> now!</p>
+</div>
+{% endif %}
 
 </div>
 
